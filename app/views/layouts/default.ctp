@@ -28,14 +28,14 @@
 echo
 	$html->tag('body',null,'c_'.$this->params['controller'].' a_'.$this->params['action']),
 		$this->element('bg'),
-		$html->div('outside',''),
+		$html->div('',$html->div('outside','',array('id'=>'outside')),array('id'=>'white_strap')),
 		$html->div(null,null,array('id'=>'nofooter')),
 			$html->div(null,null,array('id'=>'header')),
 				$html->tag('h1',$html->link($sitename_for_layout,'/',array('title'=>$sitename_for_layout)),array('id'=>'logo')),
 				$html->div('social'),
-					$html->link('facebook','#http://',array('target'=>'_blank','rel'=>'nofollow')),
-					$html->link('twitter','#http://',array('target'=>'_blank','rel'=>'nofollow')),
-					$html->link('skype','#http://',array('target'=>'_blank','rel'=>'nofollow')),
+					$html->link('facebook',Configure::read('Site.fb'),array('target'=>'_blank','rel'=>'nofollow')),
+					$html->link('twitter',Configure::read('Site.tw'),array('target'=>'_blank','rel'=>'nofollow')),
+					//$html->link('skype','#http://',array('target'=>'_blank','rel'=>'nofollow')),
 				'</div>',
 				$this->element('menu'),
 			'</div>',
@@ -48,13 +48,20 @@ echo
   <script src="//ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools-yui-compressed.js"></script>
   <script>window.MooTools || document.write('<script src="/js/moo13.js"><\/script>')</script>
 <?php
-	if(in_array($this->params['controller'],array('desarrollo','palm')))
+	if(in_array($this->params['controller'],array('desarrollo','palm'))){
 		$moo->addEvent('.section_nav a','click','$$(".section_nav a").removeClass("selected");this.addClass("selected");$$(".sections > div").addClass("hide"); $("layer_"+this.get("id")).removeClass("hide");',array('prevent'=>true,'css'=>true));
+
+		//$onLoad = '$("nofooter").setStyle("opacity",0);$("white_strap").getElement(".outside").setStyle("left","100%");';
+		$onReady = '$("nofooter").setStyles({"opacity":0,"visibility":"visible"}).fade(1);$("outside").tween("left",0)';
+		$moo->buffer('window.addEvent("load", function() { '.$onReady.' })');
+		//$moo->addEvent('document','load',$onLoad,array('css'=>1));
+	}
 	
 	echo
 		$html->script(array('moo13m','utils','pulsembox','mooshowcase')),
 		$scripts_for_layout,
 		$moo->writeBuffer(array('onDomReady'=>false)),
+		$html->tag('noscript',$html->tag('style','#nofooter { visibility:visible } #outside { left:0; }',array('type'=>'text/css'))),
 		//$this->element('gfont',array('fonts'=>array('Cantarell','Droid+Serif'))),
 	'';
 ?>

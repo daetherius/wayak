@@ -163,6 +163,9 @@ class AppController extends Controller {
 	function beforeRender(){
 		$layoutVars = array('keywords','description','og');
 		$siteVars = Configure::read('Site');
+		if(!isset($this->viewVars['sub_for_layout'])){
+			$this->set('sub_for_layout','');
+		}
 		
 		foreach($layoutVars as $layoutVar){
 			if(!isset($this->viewVars[$layoutVar.'_for_layout'])){

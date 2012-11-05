@@ -99,28 +99,33 @@ h3:first-child, h3.alpha { margin-top:0; }
 	width:960px;
 	margin:0 auto;
 	min-height:100%;
+	visibility: hidden;
 } * html #nofooter{ height:100%; }
-
 #header {
 	height:212px;
 	overflow:hidden;
 	margin: 0 0 35px;
 	z-index:1;/*IE7*/
 }
-.c_desarrollo .outside,
-.c_palm .outside {
+#outside {
+	position:absolute;
+	top:0;
+	left:100%;
+	width: 100%;
+	height:100%;
+	background:transparent url(/img/trans_white.png);
+}
+.c_desarrollo #white_strap,
+.c_palm #white_strap {
 	position:absolute;
 	top:242px;
 	left:0;
 	width:100%;
 	height: 390px;
 	z-index:-1;
-	background:transparent url(/img/trans_white.png);
+	overflow:hidden;
 }
-
-.c_desarrollo #header,
-.c_palm #header { margin-bottom:0; }
-
+.c_desarrollo #header, .c_palm #header { margin-bottom:0; }
 .c_desarrollo.a_amenidades #header { margin-bottom:35px; }
 #logo {
 	position:relative;

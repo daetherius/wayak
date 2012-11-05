@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"visi",
+				"visibility"
+			],
+			[
 				"c_",
 				"c_palm"
 			],
@@ -432,6 +436,11 @@
 	},
 	"file_history":
 	[
+		"/Users/Dan/www/wayak/app/views/elements/menu.ctp",
+		"/Users/Dan/www/wayak/app/config/site.php",
+		"/Users/Dan/www/wayak/app/webroot/css/main.css",
+		"/Users/Dan/www/wayak/app/views/layouts/default.ctp",
+		"/Users/Dan/www/wayak/app/app_controller.php",
 		"/W/wayak/app/webroot/css/main.css",
 		"/W/wayak/app/views/elements/details/desarrollo/jaal_ha.ctp",
 		"/W/wayak/app/views/elements/details/desarrollo/departamentos.ctp",
@@ -554,12 +563,7 @@
 		"/W/__cake/app/controllers/_base/abcs_controller.php",
 		"/W/__cake/app/controllers/_base/items_controller.php",
 		"/W/__cake/app/webroot/css/admin.css",
-		"/W/__cake/app/webroot/css/generic.css",
-		"/W/__cake/app/views/products/admin_editar.ctp",
-		"/W/__cake/app/webroot/js/mooshowcase.js",
-		"/W/__cake/app/config/core.php",
-		"/W/__cake/app/controllers/categories_controller.php",
-		"/W/__cake/app/controllers/_base/labels_controller.php"
+		"/W/__cake/app/webroot/css/generic.css"
 	],
 	"find":
 	{
@@ -577,6 +581,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"outside",
+			"'#http://'",
 			"irregu",
 			".button",
 			"p {",
@@ -702,8 +708,6 @@
 			"origAction",
 			"orig",
 			"pboximg",
-			"$tagTxt",
-			"tagTxt",
 			"$tagTxt"
 		],
 		"highlight": true,
@@ -792,6 +796,26 @@
 				"webroot/css/main.css"
 			],
 			[
+				"defau",
+				"views/layouts/default.ctp"
+			],
+			[
+				"site",
+				"config/site.php"
+			],
+			[
+				"default",
+				"views/layouts/default.ctp"
+			],
+			[
+				"menu",
+				"views/elements/menu.ctp"
+			],
+			[
+				"appcon",
+				"app_controller.php"
+			],
+			[
 				"amenids",
 				"views/desarrollo/amenidades.ctp"
 			],
@@ -818,14 +842,6 @@
 			[
 				"slider",
 				"views/elements/slider.ctp"
-			],
-			[
-				"menu",
-				"views/elements/menu.ctp"
-			],
-			[
-				"site",
-				"config/site.php"
 			],
 			[
 				"bg",
@@ -916,10 +932,6 @@
 				"views/elements/bg.ctp"
 			],
 			[
-				"default",
-				"views/layouts/default.ctp"
-			],
-			[
 				"inicioindex",
 				"views/inicio/index.ctp"
 			],
@@ -950,10 +962,6 @@
 			[
 				"showcase",
 				"views/elements/showcase.ctp"
-			],
-			[
-				"defau",
-				"views/layouts/default.ctp"
 			],
 			[
 				"data",
@@ -1294,10 +1302,6 @@
 			[
 				"index3",
 				"views/inicio/index3.ctp"
-			],
-			[
-				"index2",
-				"views/inicio/index2.ctp"
 			]
 		],
 		"width": 0.0
