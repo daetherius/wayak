@@ -11,11 +11,11 @@
 
 @font-face {
     font-family: 'PetitaB';
-    src: url('/fonts/petitabold-webfont.eot');
-    src: url('/fonts/petitabold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/petitabold-webfont.woff') format('woff'),
-         url('/fonts/petitabold-webfont.ttf') format('truetype'),
-         url('/fonts/petitabold-webfont.svg#PetitaB') format('svg');
+    src: url('/fonts/PetitaBold.eot');
+    src: url('/fonts/PetitaBold.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/PetitaBold.woff') format('woff'),
+         url('/fonts/PetitaBold.ttf') format('truetype'),
+         url('/fonts/PetitaBold.svg#PetitaB') format('svg');
     font-weight: normal;
     font-style: normal;
 }

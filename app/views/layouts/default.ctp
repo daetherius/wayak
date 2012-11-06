@@ -2,6 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" itemscope itemtype="http://schema.org/<?=ucfirst($og_for_layout['itemtype'])?>">
 <head>
 <title><?=$sitename_for_layout.($title_for_layout ? ' | '.$title_for_layout : '')?></title>
+
+<!-- Mobile viewport optimization h5bp.com/ad -->
+
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="<?=$description_for_layout?>" />
 <meta name="keywords" content="<?=$keywords_for_layout?>" />
@@ -48,14 +51,34 @@ echo
   <script src="//ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools-yui-compressed.js"></script>
   <script>window.MooTools || document.write('<script src="/js/moo13.js"><\/script>')</script>
 <?php
+	$onLoad = '';
 	if(in_array($this->params['controller'],array('desarrollo','palm'))){
 		$moo->addEvent('.section_nav a','click','$$(".section_nav a").removeClass("selected");this.addClass("selected");$$(".sections > div").addClass("hide"); $("layer_"+this.get("id")).removeClass("hide");',array('prevent'=>true,'css'=>true));
 
-		//$onLoad = '$("nofooter").setStyle("opacity",0);$("white_strap").getElement(".outside").setStyle("left","100%");';
-		$onReady = '$("nofooter").setStyles({"opacity":0,"visibility":"visible"}).fade(1);$("outside").tween("left",0)';
-		$moo->buffer('window.addEvent("load", function() { '.$onReady.' })');
-		//$moo->addEvent('document','load',$onLoad,array('css'=>1));
+		$onLoad = '$("outside").set("tween",{duration:1200,unit:"%"}).tween("left",0);';
 	}
+	
+	$moo->buffer('window.addEvent("load", function() {
+		$("nofooter").setStyles({"opacity":0,"visibility":"visible"}).fade(1);
+		$$("#menu > li > a").each(function(el){
+			var bgSpan = el.getElement("span.bg");
+			
+			if(!bgSpan.getParent(".mSelected"))
+				bgSpan.setStyle("top",-74);
+
+			el.store("bgFx",new Fx.Tween(bgSpan,{ property:"top", transition:"pow:in:out", link:"cancel", duration:500 }));
+			el.addEvents({
+				"mouseenter":function(e){
+					this.retrieve("bgFx").start(0);
+				}.bind(el),
+				"mouseleave":function(e){
+					if(!this.getParent(".mSelected"))
+						this.retrieve("bgFx").start(-74);
+				}.bind(el)
+			});
+		});
+		'.$onLoad.' });
+	');
 	
 	echo
 		$html->script(array('moo13m','utils','pulsembox','mooshowcase')),

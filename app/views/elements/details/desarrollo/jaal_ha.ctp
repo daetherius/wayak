@@ -4,8 +4,9 @@ echo
 	$html->div($visible ? '':'hide',null,array('id'=>'layer_jaal_ha')),
 		$html->div('column'),
 			$html->tag('h2','Villas Jaal-Há','title'),
-			$html->para(null,'Lectus tempora officia exercitationem hymenaeos reiciendis voluptas, architecto error, fringilla nascetur? Fringilla, sapien sit deleniti suspendisse laoreet consequatur optio urna, nascetur expedita occaecat culpa, lobortis urna. Integer! Cubilia. Tempora tristique! Fugit delectus per consequatur porttitor suscipit. Bibendum culpa culpa? Eaque, quos do do erat incidunt.'),
-			$html->para(null,'Sed aut corporis iusto facilisis pretium ultrices. Minus! Nec commodi dignissim modi? Quod quos diam, nostra. Adipisci, harum lacus netus dis consectetuer metus sodales venenatis nibh consequat? Tempus, corrupti reprehenderit, sapiente recusandae itaque tempor eaque morbi, nulla. In, repellat, ratione, harum orci parturient nesciunt, dolorum.'),
+			$html->para(null,'Místicos amaneceres y majestuosos atardeceres, Las Villas Jaal-Há son para  aquello que quieren vivir el sueño Wayak al máximo. Ideada para los que no quieren escatimar en comodidades. Su exclusivo Penthouse y todo el equipamiento que una residencia de lujo puede aspirar, hacen hacen de la vida a la orilla del mar una experiencia única.'),
+			$html->para(null,'Fusión entre belleza y lujo. Cuatro habitaciones y un penthouse, todas con terraza, dos balcones y vista al mar en todas las habitaciones.'),
+			$html->para(null,'3 Plantas.<br/>200 m2 de construcción.<br/>Terreno de 8 x 25 metros.'),
 
 			$this->element('hidden_gallery',compact('album')),
 			$html->link('Ver Ficha Arquitectónica','/img/fichas/desarrollo/jaal_ha.jpg',array('class'=>'pulsembox')),

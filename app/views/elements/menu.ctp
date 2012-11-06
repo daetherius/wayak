@@ -1,6 +1,6 @@
 <ul id="menu">
 <?php
-echo $html->tag('li',$html->link($html->tag('span', 'Home'),'/'),array('class'=>$this->params['controller']=='inicio' ? 'mSelected' : ''));
+echo $html->tag('li',$html->link($html->tag('span', 'Home').$html->tag('span','','bg'),'/'),array('class'=>$this->params['controller']=='inicio' ? 'mSelected' : ''));
 
 $galleries = array();
 $galleries['desarrollo'] = Configure::read('album_desarrollo_galeria');
@@ -23,7 +23,7 @@ foreach(Configure::read('Modules') as $cntllr => $mod){
 				break;
 
 				case 'palm':
-					$rootUrl = array('controller'=>'desarrollo','action'=>'pentgarden');
+					$rootUrl = array('controller'=>'palm','action'=>'pentgarden');
 					$submenu = 	$html->tag('li',$html->link('Departamentos',array('controller'=>'palm','action'=>'pentgarden')),array('class'=>$this->params['controller'] == 'palm' ? 'selected':'')).
 								(!empty($galleries['palm']) ? $html->tag('li',$html->link('Galería','/'.$galleries['palm'][0]['Albumimg']['src'],array('class'=>'pulsembox','rel'=>'gallery_palm'))): '');
 				default:
@@ -47,7 +47,7 @@ foreach(Configure::read('Modules') as $cntllr => $mod){
 		echo
 			$html->tag('li',
 				$html->link(
-					$html->tag('span',$mod['menu']),
+					$html->tag('span',$mod['menu']).$html->tag('span','','bg'),
 					 in_array($cntllr, array('desarrollo','palm')) ? $rootUrl : array('controller'=>$cntllr,'action'=>'index')
 				).$submenu,
 				array('class'=>$this->params['controller'] == $cntllr ? 'mSelected' : '')
