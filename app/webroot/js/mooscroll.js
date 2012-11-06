@@ -94,7 +94,7 @@ var mooScroll = new Class({
 		this.active = this.steps > 0;
 		
 		this.sliderFx.setRange([0,this.steps]);
-		this.sliderFx.set(0);return;
+		this.sliderFx.set(0);
 		this.slider.setStyle('display', this.active ? 'block':'none');
 	}
 });
