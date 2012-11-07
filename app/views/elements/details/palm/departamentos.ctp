@@ -2,7 +2,7 @@
 $visible = !empty($visible);
 echo
 	$html->div($visible ? '':'hide',null,array('id'=>'layer_departamentos')),
-		$html->div('column',null,array('id'=>'column1')),
+		$html->div('column',null,array('id'=>'column3')),
 			$html->div('pad'),
 				$html->tag('h2','Departamentos','title'),
 				$html->para(null,'Lectus tempora officia exercitationem hymenaeos reiciendis voluptas, architecto error, fringilla nascetur? Fringilla, sapien sit deleniti suspendisse laoreet consequatur optio urna, nascetur expedita occaecat culpa, lobortis urna. Integer! Cubilia. Tempora tristique! Fugit delectus per consequatur porttitor suscipit. Bibendum culpa culpa? Eaque, quos do do erat incidunt.'),
@@ -13,7 +13,7 @@ echo
 			'</div>',
 		'</div>',
 		//-----
-		$html->div('column',null,array('id'=>'column2')),
+		$html->div('column',null,array('id'=>'column4')),
 			$html->div('pad'),
 				$html->para(null,'Lectus tempora officia exercitationem hymenaeos reiciendis voluptas, architecto error, fringilla nascetur? Fringilla, sapien sit deleniti suspendisse laoreet consequatur optio urna, nascetur expedita occaecat culpa, lobortis urna. Integer! Cubilia. Tempora tristique! Fugit delectus per consequatur porttitor suscipit. Bibendum culpa culpa? Eaque, quos do do erat incidunt.'),
 				$html->para(null,'Veniam nullam iaculis autem omnis! Mi metus quisquam, sapiente sociis autem nesciunt, cubilia inceptos varius sapiente, distinctio suspendisse? Dis fames, laborum sodales aliquet habitasse eos nostrud dolore feugiat, excepturi id eaque dicta adipisci dolor! Consectetur, assumenda? Quaerat nullam vero mauris ut aliquip? Rhoncus vulputate corporis.'),

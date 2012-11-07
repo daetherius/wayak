@@ -9,6 +9,7 @@ echo
 		$this->element('details/desarrollo/departamentos',array('album'=>$albums['departamentos'],'visible'=>$visible == 'departamentos')),
 		$this->element('details/desarrollo/penthouse',array('album'=>$albums['penthouse'],'visible'=>$visible == 'penthouse')),
 	'</div>';
+	$moo->scroll(array('column1','column2','column3','column4'));
 ?>
 </div>
 </div><!-- .content -->

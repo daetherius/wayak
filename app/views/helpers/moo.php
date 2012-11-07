@@ -173,7 +173,10 @@ class MooHelper extends JsHelper {
 		$this->Html->script('mooscroll',false);
 		$this->Html->css('mooscroll','stylesheet',array('inline'=>false));
 		
-		foreach($els as $el) $this->buffer('new mooScroll("'.$el.'"'.$options.');');
+		if(!empty($els)){
+			foreach($els as $el)
+				$this->buffer('var moo_scroll = new mooScroll("'.$el.'"'.$options.');');
+		}
 	}
 
 	function showcase($el, $options=array()){

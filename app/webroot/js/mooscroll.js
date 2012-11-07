@@ -24,7 +24,7 @@ var mooScroll = new Class({
 		//// Fxs
 		this.opacityFx = new Fx.Tween(this.slider,{ property:'opacity', transition:'pow:out', duration:900, link:'cancel' }).set(0);
 		this.scrollFx = new Fx.Scroll(this.el, { duration:300, /*transition:'quint:in:out',*/ link:'cancel' });
-		this.sliderFx = new Slider(this.slider, this.handle, {	
+		this.sliderFx = new Slider(this.slider, this.handle, {
 			steps: this.steps,
 			mode: 'vertical',
 			onChange: function(step){
@@ -56,13 +56,13 @@ var mooScroll = new Class({
 		if(!this.active) return;
 		this.blink();
 		amount = amount || this.bigstep;
-		this.sliderFx.set(this.sliderFx.step - amount);					
+		this.sliderFx.set(this.sliderFx.step - amount);
 	},
 	down:function(amount){
 		if(!this.active) return;
 		this.blink();
 		amount = amount || this.bigstep;
-		this.sliderFx.set(this.sliderFx.step + amount);					
+		this.sliderFx.set(this.sliderFx.step + amount);
 	},
 	toElement:function(el,dir){
 		var screl = $(el).getCoordinates(this.el);
@@ -89,10 +89,17 @@ var mooScroll = new Class({
 		}
 	},
 	resize:function(){
-		this.steps = this.el.getScrollSize().y - this.el.getSize().y;
-		this.bigstep = this.el.getSize().y;
+		//this.el.measure(function(){ return this.getDimensions().y; });
+		this.bigstep = this.el.measure(function(){ return this.getDimensions().y; });
+		this.steps = this.el.measure(function(){ return this.getScrollSize().y; }) - this.bigstep;
 		this.active = this.steps > 0;
 		
+		console.log('--- '+this.el.id);
+		console.log('this.y size',this.bigstep);
+		console.log('this.steps',this.steps);
+		console.log('this.active',this.active);
+		console.log('===================');
+
 		this.sliderFx.setRange([0,this.steps]);
 		this.sliderFx.set(0);
 		this.slider.setStyle('display', this.active ? 'block':'none');
