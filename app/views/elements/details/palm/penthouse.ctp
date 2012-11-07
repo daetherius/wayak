@@ -21,5 +21,4 @@ echo
 			'</div>',
 		'</div>',
 	'</div>';
-	$moo->scroll(array('column1','column2'));
 ?>

@@ -30,6 +30,7 @@
 <?php
 echo
 	$html->tag('body',null,'c_'.$this->params['controller'].' a_'.$this->params['action']),
+	$html->div('wrap'),
 		$this->element('bg'),
 		$html->div('',$html->div('outside','',array('id'=>'outside')),array('id'=>'white_strap')),
 		$html->div(null,null,array('id'=>'nofooter')),
@@ -45,8 +46,8 @@ echo
 			$html->div(null,$content_for_layout.'',array('id'=>'body')),
 			$html->div(null,'',array('id'=>'cleaner')),
 		'</div><!-- #nofooter -->',
-
-		$this->element('footer');
+		$this->element('footer'),
+	'</div>';
 ?>
   <script src="//ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools-yui-compressed.js"></script>
   <script>window.MooTools || document.write('<script src="/js/moo13.js"><\/script>')</script>

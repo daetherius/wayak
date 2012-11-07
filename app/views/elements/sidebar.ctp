@@ -1,7 +1,19 @@
 <div class="sidebar">
-<div class="pad">
+<div class="pad" id="sidebar_pad">
 <?php
 if(is_c('events',$this)){
+	echo $html->tag('h2','Comunidad Wayak','title');
+	if($items = Cache::read('event_recent')){
+		echo $html->tag('ul',null,'bulleted');
+	
+		foreach($items as $slug => $nombre){
+			$selected = isset($this->passedArgs[0]) && $slug == $this->passedArgs[0] ? 'selected' : '';
+			echo $html->tag('li',$html->link($nombre,array('controller'=>Inflector::tableize('event'),'action'=>'ver','id'=>$slug)),$selected);
+		}
+	
+		echo '</ul>';
+	}
+
 	if(isset($item) && $item){
 		echo $html->div('nav');
 		
@@ -13,24 +25,26 @@ if(is_c('events',$this)){
 		
 		echo '</div>';
 	}
-
-	if($items = Cache::read('event_recent')){
-		echo $html->tag('ul',null,'bulleted');
-	
-		foreach($items as $slug => $nombre){
-			$selected = isset($this->passedArgs[0]) && $slug == $this->passedArgs[0] ? 'selected' : '';
-			echo $html->tag('li',$html->link($nombre,array('controller'=>Inflector::tableize('event'),'action'=>'ver','id'=>$slug)),$selected);
-		}
-	
-		echo '</ul>';
-	}
+	$moo->buffer('window.addEvent("domready", function(){
+		$("sidebar_pad").setStyle("height",$("body").getFirst(".content").getStyle("height"));
+	});');
 }
 
 if(is_c('contacto',$this)){
 	echo
 		$html->para(null,'Carr. Progreso - Telchac Km 25.5<br/>San Benito, Yucatán, México.'),
 		$html->para(null,'+52 (999) 9381687'),
-		$html->para(null,$util->ofuscar('info@villaswayak.com'));
+		$html->para(null,$util->ofuscar('info@villaswayak.com')),
+		$html->div('','',array('id'=>'mapa')),
+
+		$html->script('http://maps.google.com/maps/api/js?sensor=false'),
+		$moo->buffer('var latLong = new google.maps.LatLng(21.326324,-89.417908);
+		var map = new google.maps.Map(document.getElementById("mapa"), { zoom: 16, center: latLong, mapTypeId: google.maps.MapTypeId.SATELLITE });
+		var beachMarker = new google.maps.Marker({
+			position: latLong,
+			map: map,
+			icon: "/img/marker.png"
+		});');
 }
 //echo $html->div('banners',$this->element('banners'),array('id'=>'banners')), $moo->showcase('banners',array('nav'=>'out'));
 ?>

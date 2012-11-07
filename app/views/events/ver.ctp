@@ -3,7 +3,7 @@ echo
 	$this->element('top',array('wide'=>false)),
 	$html->div('detail'),
 		$html->tag('h1',$item[$_m[0]]['nombre'],array('class'=>'title')),
-		$html->para('date',$util->fdate('s',$item[$_m[0]]['created'])),
+		//$html->para('date',$util->fdate('s',$item[$_m[0]]['created'])),
 		
 		$html->div('clear'),
 			$util->th($item,$_m[0],array(
@@ -20,9 +20,9 @@ echo
 
 		echo '</div>',
 	
+		$this->element('facebook',array('mode'=>'v')),
 		/*
 		$this->element('slider',array('model'=>$_m[0].'img','data'=>$item[$_m[0].'img'],'skip'=>true)),
-		$this->element('share'),
 		$this->element('comments'),
 		*/
 	'</div>';

@@ -11,6 +11,8 @@ echo
 		$this->element('details/palm/departamentos',array('album'=>$albums['departamentos'],'visible'=>$visible == 'departamentos')),
 		$this->element('details/palm/penthouse',array('album'=>$albums['penthouse'],'visible'=>$visible == 'penthouse')),
 	'</div>';
+
+	$moo->scroll(array('column1','column2','column3','column4','column5','column6'));
 ?>
 </div>
 </div><!-- .content -->
