@@ -75,7 +75,7 @@ class ItemsController extends AbcsController{
 			}
 		}
 		
-		$this->detour('elements/temp');
+		$this->detour('elements/temp','admin_images');
 	}
 	
 	function admin_orden($limit = 30){

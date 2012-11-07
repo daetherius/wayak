@@ -42,6 +42,7 @@ echo
 					//$html->link('skype','#http://',array('target'=>'_blank','rel'=>'nofollow')),
 				'</div>',
 				$this->element('menu'),
+				$this->element('tweets'),
 			'</div>',
 			$html->div(null,$content_for_layout.'',array('id'=>'body')),
 			$html->div(null,'',array('id'=>'cleaner')),
@@ -82,7 +83,7 @@ echo
 	');
 	
 	echo
-		$html->script(array('moo13m','utils','pulsembox','mooshowcase')),
+		$html->script(array('moo13m','utils','pulsembox','mooshowcase','mooscroller')),
 		$scripts_for_layout,
 		$moo->writeBuffer(array('onDomReady'=>false)),
 		$html->tag('noscript',$html->tag('style','#nofooter { visibility:visible } #outside { left:0; }',array('type'=>'text/css'))),

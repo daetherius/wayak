@@ -32,7 +32,7 @@ var mooScroller = new Class({
 		if(this.bt_prev) this.bt_prev.addEvent('click',function(){ this.previous(); }.bindWithEvent(this));
 		if(this.bt_next) this.bt_next.addEvent('click',function(){ this.next(); }.bindWithEvent(this));
 		
-		this.panes = this.container.getChildren('div');
+		this.panes = this.container.getChildren();
 		this.panes.setStyles({
 			position:'absolute',
 			width:'100%',

@@ -3,10 +3,12 @@
 <?php
 if(is_c('events',$this)){
 	echo $html->tag('h2','Comunidad Wayak','title');
-	if($items = Cache::read('event_recent')){
+	if($items){
 		echo $html->tag('ul',null,'bulleted');
 	
-		foreach($items as $slug => $nombre){
+		foreach($items as $item){
+			$slug = $item['Event']['slug'];
+			$nombre = $item['Event']['nombre'];
 			$selected = isset($this->passedArgs[0]) && $slug == $this->passedArgs[0] ? 'selected' : '';
 			echo $html->tag('li',$html->link($nombre,array('controller'=>Inflector::tableize('event'),'action'=>'ver','id'=>$slug)),$selected);
 		}
@@ -14,6 +16,9 @@ if(is_c('events',$this)){
 		echo '</ul>';
 	}
 
+	echo $this->element('pages',array('nextprev'=>1));
+
+	/*
 	if(isset($item) && $item){
 		echo $html->div('nav');
 		
@@ -25,9 +30,9 @@ if(is_c('events',$this)){
 		
 		echo '</div>';
 	}
-	$moo->buffer('window.addEvent("domready", function(){
-		$("sidebar_pad").setStyle("height",$("body").getFirst(".content").getStyle("height"));
-	});');
+	*/
+
+	$moo->buffer('window.addEvent("domready", function(){ console.log($("body").getFirst(".content").getStyle("height"));$("sidebar_pad").setStyle("height",$("body").getFirst(".content").getStyle("height")); });');
 }
 
 if(is_c('contacto',$this)){

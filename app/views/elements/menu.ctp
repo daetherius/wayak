@@ -3,8 +3,8 @@
 echo $html->tag('li',$html->link($html->tag('span', 'Home').$html->tag('span','','bg'),'/'),array('class'=>$this->params['controller']=='inicio' ? 'mSelected' : ''));
 
 $galleries = array();
-$galleries['desarrollo'] = Configure::read('album_desarrollo_galeria');
-$galleries['palm'] = Configure::read('album_palm_galeria');
+$galleries['desarrollo'] = Cache::read('album_desarrollo_gral');
+$galleries['palm'] = Cache::read('album_palm_gral');
 
 foreach(Configure::read('Modules') as $cntllr => $mod){
 	if(isset($mod['menu']) && $mod['menu']){
@@ -19,13 +19,13 @@ foreach(Configure::read('Modules') as $cntllr => $mod){
 					$submenu = 	$html->tag('li',$html->link('Villas',array('controller'=>'desarrollo','action'=>'jaal_ha')),array('class'=>$sub_for_layout == 'villas' ? 'selected':'')).
 								$html->tag('li',$html->link('Departamentos',array('controller'=>'desarrollo','action'=>'departamentos')),array('class'=>$sub_for_layout == 'departamentos' ? 'selected':'')).
 								$html->tag('li',$html->link('Amenidades',array('controller'=>'desarrollo','action'=>'amenidades')),array('class'=>$sub_for_layout == 'amenidades' ? 'selected':'')).
-								(!empty($galleries['desarrollo']) ? $html->tag('li',$html->link('Galería','/'.$galleries['desarrollo'][0]['Albumimg']['src'],array('class'=>'pulsembox','rel'=>'gallery_desarrollo'))): '');
+								(!empty($galleries['desarrollo']['Albumimg']) ? $html->tag('li',$html->link('Galería','/'.$galleries['desarrollo']['Albumimg'][0]['src'],array('class'=>'pulsembox','rel'=>'gallery_desarrollo'))): '');
 				break;
 
 				case 'palm':
 					$rootUrl = array('controller'=>'palm','action'=>'pentgarden');
 					$submenu = 	$html->tag('li',$html->link('Departamentos',array('controller'=>'palm','action'=>'pentgarden')),array('class'=>$this->params['controller'] == 'palm' ? 'selected':'')).
-								(!empty($galleries['palm']) ? $html->tag('li',$html->link('Galería','/'.$galleries['palm'][0]['Albumimg']['src'],array('class'=>'pulsembox','rel'=>'gallery_palm'))): '');
+								(!empty($galleries['palm']['Albumimg']) ? $html->tag('li',$html->link('Galería','/'.$galleries['palm']['Albumimg'][0]['src'],array('class'=>'pulsembox','rel'=>'gallery_palm'))): '');
 				default:
 				break;
 			}
@@ -33,11 +33,11 @@ foreach(Configure::read('Modules') as $cntllr => $mod){
 			$submenu = $html->tag('ul',$submenu,'submenu');
 
 			if(!empty($galleries[$cntllr])){
-				foreach ($galleries[$cntllr] as $img) {
-					$src = '/'.$img['Albumimg']['src'];
-					$desc = $img['Albumimg']['descripcion'];
+				foreach ($galleries[$cntllr]['Albumimg'] as $img) {
+					$src = '/'.$img['src'];
+					$desc = $img['descripcion'];
 
-					$gallery.= $html->link(basename($src),$src,array('class'=>'pulsembox','rel'=>'gallery','name'=>_dec($desc),'title'=>$desc));
+					$gallery.= $html->link(basename($src),$src,array('class'=>'pulsembox','rel'=>'gallery_'.$cntllr,'name'=>_dec($desc),'title'=>$desc));
 				}
 			}
 

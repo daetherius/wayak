@@ -162,7 +162,7 @@ class MooHelper extends JsHelper {
 
 	function scroller($el='',$options = array()){
 		$options = $this->Util->json(am(array('auto'=>true),$options));
-		$this->Html->script('mooscroller',false);
+		//$this->Html->script('mooscroller',false);
 		if($el)
 			$this->buffer('new mooScroller("'.$el.'"'.$options.');');
 	}

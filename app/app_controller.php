@@ -37,6 +37,16 @@ class AppController extends Controller {
 				Cache::write(strtolower('Banner').'_recent',$this->Banner->find_(array('contain'=>false)));
 			}*/
 			
+			if(Cache::read('album_desarrollo_gral') === false){
+				$this->loadModel('Album');
+				Cache::write('album_desarrollo_gral',$this->Album->find_(array(9,'contain'=>array('Albumimg'))));
+			}
+
+			if(Cache::read('album_palm_gral') === false){
+				$this->loadModel('Album');
+				Cache::write('album_palm_gral',$this->Album->find_(array(10,'contain'=>array('Albumimg'))));
+			}
+
 			if(Cache::read('event_recent') === false){
 				$this->loadModel('Event');
 				Cache::write('event_recent',$this->Event->find_(array('contain'=>false,'fields'=>array('slug','nombre')),'list'));

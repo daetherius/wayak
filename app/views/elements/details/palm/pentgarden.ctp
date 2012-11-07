@@ -1,5 +1,6 @@
 <?php
 $visible = !empty($visible);
+fb($album,'$album');
 echo
 	$html->div($visible ? '':'hide',null,array('id'=>'layer_pentgarden')),
 		$html->div('column',null,array('id'=>'column5')),

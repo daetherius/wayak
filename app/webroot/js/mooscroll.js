@@ -94,12 +94,6 @@ var mooScroll = new Class({
 		this.steps = this.el.measure(function(){ return this.getScrollSize().y; }) - this.bigstep;
 		this.active = this.steps > 0;
 		
-		console.log('--- '+this.el.id);
-		console.log('this.y size',this.bigstep);
-		console.log('this.steps',this.steps);
-		console.log('this.active',this.active);
-		console.log('===================');
-
 		this.sliderFx.setRange([0,this.steps]);
 		this.sliderFx.set(0);
 		this.slider.setStyle('display', this.active ? 'block':'none');

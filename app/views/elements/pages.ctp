@@ -1,4 +1,5 @@
 <?php
+$nextprev = isset($nextprev);
 $full = isset($full);
 $model = isset($model) && $model ? $model:$_m[0];
 $hiddeable = isset($hiddeable) ? $hiddeable : true;
@@ -28,6 +29,12 @@ if(!$hiddeable  || $paginator->params['paging'][$model]['pageCount'] > 1){
 		$numbers = $paginator->numbers(array('separator'=>'','modulus'=>4,'first'=>2,'last'=>2));
 	} else {
 		$numbers = $paginator->counter(array('format' => '%page% <span>|</span> %pages%'));
+	}
+
+	if($nextprev){
+		$a = array('prev'=>'Anterior','next'=>'Siguiente');
+		$showtext = true;
+		$numbers = '';
 	}
 	
 	//// Generamos los links

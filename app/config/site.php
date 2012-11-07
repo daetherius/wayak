@@ -6,8 +6,8 @@ $config['Site'] = array(
 	'slogan'=>'Visions of a Dream',
 	'keywords'=>'',
 	'description'=>'',
-	'tw'=>'',
-	'fb'=>''
+	'tw'=>'http://twitter.com/villaswayak',
+	'fb'=>'http://facebook.com/VillasWayak'
 );
 
 $config['Site']['og'] = array(

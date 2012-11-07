@@ -13,7 +13,7 @@
  *    Configure::write('log', E_ERROR | E_WARNING);
  *    Configure::write('log', E_ALL ^ E_NOTICE);
  */
-	Configure::write('log', true);
+	Configure::write('log', E_ERROR | E_WARNING);
 	Configure::write('App.encoding', 'UTF-8');
 
 #To use CakePHP pretty URLs, remove .htaccess ad uncomment the App.baseUrl below:
@@ -133,4 +133,10 @@ Cache::config('default', array(
 	'duration'=> '+20 days',
 	'probability'=> 100
 ));
+
+Cache::config('twitter', array(
+	'engine' => 'File',
+	'duration' => '+30 minutes'
+));
+
 Configure::load('site');
