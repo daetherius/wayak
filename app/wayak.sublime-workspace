@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getDimensions"
+			],
+			[
 				"visi",
 				"visibility"
 			],
@@ -327,9 +331,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 47.0,
 		"selected_items":
 		[
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
 			[
 				"cal",
 				"Calculate"
@@ -337,10 +345,6 @@
 			[
 				"calc",
 				"Calculate"
-			],
-			[
-				"brow",
-				"Preferences: Browse Packages"
 			],
 			[
 				"remove",
@@ -419,7 +423,7 @@
 				"Snippet: html"
 			]
 		],
-		"width": 536.0
+		"width": 602.0
 	},
 	"console":
 	{
@@ -436,9 +440,22 @@
 	},
 	"file_history":
 	[
+		"/Users/Dan/www/wayak/app/views/helpers/moo.php",
+		"/Users/Dan/www/wayak/app/webroot/js/mooscroll.js",
+		"/Users/Dan/www/wayak/app/views/desarrollo/villas.ctp",
+		"/Users/Dan/www/wayak/app/views/desarrollo/departamentos.ctp",
+		"/Users/Dan/www/wayak/app/views/desarrollo/amenidades.ctp",
+		"/Users/Dan/www/wayak/app/webroot/css/main.css",
+		"/Users/Dan/www/wayak/app/views/elements/details/palm/departamentos.ctp",
+		"/Users/Dan/www/wayak/app/views/elements/details/palm/pentgarden.ctp",
+		"/Users/Dan/www/wayak/app/views/elements/details/desarrollo/departamentos.ctp",
+		"/Users/Dan/www/wayak/app/views/elements/details/desarrollo/penthouse.ctp",
+		"/Users/Dan/www/wayak/app/views/elements/details/desarrollo/jaal_ha.ctp",
+		"/Users/Dan/www/wayak/app/views/elements/details/desarrollo/naay_ha.ctp",
+		"/Users/Dan/www/wayak/app/views/elements/hidden_gallery.ctp",
+		"/Users/Dan/Library/Application Support/Sublime Text 2/Packages/Snippets/PHP/ckul",
 		"/Users/Dan/www/wayak/app/views/elements/menu.ctp",
 		"/Users/Dan/www/wayak/app/config/site.php",
-		"/Users/Dan/www/wayak/app/webroot/css/main.css",
 		"/Users/Dan/www/wayak/app/views/layouts/default.ctp",
 		"/Users/Dan/www/wayak/app/app_controller.php",
 		"/W/wayak/app/webroot/css/main.css",
@@ -550,20 +567,7 @@
 		"/W/__cake/app/views/_base/labels/admin_index.ctp",
 		"/W/__cake/app/views/polls/admin_editar.ctp",
 		"/W/__cake/app/views/polls/admin_agregar.ctp",
-		"/W/__cake/app/views/_base/admin_orden.ctp",
-		"/W/__cake/app/views/products/_admin_editar.ctp",
-		"/W/__cake/app/views/elements/recursive.ctp",
-		"/W/__cake/app/controllers/nodes_controller.php",
-		"/W/__cake/app/controllers/_base/categorizeditems_controller.php",
-		"/W/__cake/app/views/elements/adminhdr.ctp",
-		"/W/__cake/app/views/_base/admin_agregar.ctp",
-		"/W/__cake/app/models/type.php",
-		"/W/__cake/app/app_model.php",
-		"/W/__cake/app/models/product.php",
-		"/W/__cake/app/controllers/_base/abcs_controller.php",
-		"/W/__cake/app/controllers/_base/items_controller.php",
-		"/W/__cake/app/webroot/css/admin.css",
-		"/W/__cake/app/webroot/css/generic.css"
+		"/W/__cake/app/views/_base/admin_orden.ctp"
 	],
 	"find":
 	{
@@ -581,6 +585,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".column",
+			"getScroll",
+			"getDimensio",
+			"getSize",
+			"this.el.getSize()",
+			"active",
+			"Penthouse",
+			"• ",
 			"outside",
 			"'#http://'",
 			"irregu",
@@ -700,15 +712,7 @@
 			"bracket",
 			"match_string_brackets",
 			"$class",
-			"attrs",
-			"$atts",
-			"detourfr",
-			"origAction",
-			"orig",
-			"origAction",
-			"orig",
-			"pboximg",
-			"$tagTxt"
+			"attrs"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -792,8 +796,68 @@
 		"selected_items":
 		[
 			[
+				"amenida",
+				"views/desarrollo/amenidades.ctp"
+			],
+			[
 				"maincss",
 				"webroot/css/main.css"
+			],
+			[
+				"depart",
+				"views/desarrollo/departamentos.ctp"
+			],
+			[
+				"villas",
+				"views/desarrollo/villas.ctp"
+			],
+			[
+				"moo.p",
+				"views/helpers/moo.php"
+			],
+			[
+				"mooscroll",
+				"webroot/js/mooscroll.js"
+			],
+			[
+				"details/palm",
+				"views/elements/details/palm/pentgarden.ctp"
+			],
+			[
+				"pent",
+				"views/elements/details/desarrollo/penthouse.ctp"
+			],
+			[
+				"departa",
+				"views/elements/details/desarrollo/departamentos.ctp"
+			],
+			[
+				"naay",
+				"views/elements/details/desarrollo/naay_ha.ctp"
+			],
+			[
+				"desarrollo/",
+				"views/desarrollo/departamentos.ctp"
+			],
+			[
+				"jaa",
+				"views/elements/details/desarrollo/jaal_ha.ctp"
+			],
+			[
+				"penth",
+				"views/elements/details/desarrollo/penthouse.ctp"
+			],
+			[
+				"hidden",
+				"views/elements/hidden_gallery.ctp"
+			],
+			[
+				"amenid",
+				"views/desarrollo/amenidades.ctp"
+			],
+			[
+				"depat",
+				"views/elements/details/desarrollo/departamentos.ctp"
 			],
 			[
 				"defau",
@@ -824,16 +888,8 @@
 				"views/elements/details/palm/penthouse.ctp"
 			],
 			[
-				"naay",
-				"views/elements/details/naay_ha.ctp"
-			],
-			[
 				"yaa",
 				"views/elements/details/yaal_ha.ctp"
-			],
-			[
-				"villas",
-				"views/desarrollo/villas.ctp"
 			],
 			[
 				"desarro",
@@ -1250,58 +1306,6 @@
 			[
 				"admin_orden",
 				"views/_base/admin_orden.ctp"
-			],
-			[
-				"_base/labels/",
-				"views/_base/labels/admin_index.ctp"
-			],
-			[
-				"admin_orde",
-				"views/_base/admin_orden.ctp"
-			],
-			[
-				"product.",
-				"models/product.php"
-			],
-			[
-				"producs",
-				"controllers/products_controller.php"
-			],
-			[
-				"produt",
-				"models/product.php"
-			],
-			[
-				"routes",
-				"config/routes.php"
-			],
-			[
-				"sear",
-				"models/search.php"
-			],
-			[
-				"produver",
-				"views/products/ver.ctp"
-			],
-			[
-				"producsindex",
-				"views/products/index.ctp"
-			],
-			[
-				"databas",
-				"config/database.php"
-			],
-			[
-				"index5",
-				"views/inicio/index5.ctp"
-			],
-			[
-				"index4",
-				"views/inicio/index4.ctp"
-			],
-			[
-				"index3",
-				"views/inicio/index3.ctp"
 			]
 		],
 		"width": 0.0
@@ -1311,6 +1315,14 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"c",
+				"/Users/Dan/www/cubayucatan/cubayucatan.sublime-project"
+			],
+			[
+				"wa",
+				"/Users/Dan/www/wayak/app/wayak.sublime-project"
+			],
 			[
 				"cuba",
 				"/W/cubayucatan/app/cubayucatan.sublime-project"
