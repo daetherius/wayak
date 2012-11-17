@@ -37,8 +37,8 @@ echo
 			$html->div(null,null,array('id'=>'header')),
 				$html->tag('h1',$html->link($sitename_for_layout,'/',array('title'=>$sitename_for_layout)),array('id'=>'logo')),
 				$html->div('social'),
-					$html->link('facebook',Configure::read('Site.fb'),array('target'=>'_blank','rel'=>'nofollow')),
-					$html->link('twitter',Configure::read('Site.tw'),array('target'=>'_blank','rel'=>'nofollow')),
+					$html->link('facebook',Configure::read('Site.fb'),array('target'=>'_blank','rel'=>'nofollow','class'=>'ico_facebook')),
+					$html->link('twitter',Configure::read('Site.tw'),array('target'=>'_blank','rel'=>'nofollow','class'=>'ico_twitter')),
 					//$html->link('skype','#http://',array('target'=>'_blank','rel'=>'nofollow')),
 				'</div>',
 				$this->element('menu'),
@@ -64,11 +64,20 @@ echo
 		$("nofooter").setStyles({"opacity":0,"visibility":"visible"}).fade(1);
 		$$("#menu > li > a").each(function(el){
 			var bgSpan = el.getElement("span.bg");
+			var li_submenu = el.getNext(".submenu");
 			
+			if(li_submenu)
+				li_submenu.setStyle("opacity",0);
+
 			if(!bgSpan.getParent(".mSelected"))
 				bgSpan.setStyle("top",-74);
 
-			el.store("bgFx",new Fx.Tween(bgSpan,{ property:"top", transition:"pow:in:out", link:"cancel", duration:500 }));
+			el.store("bgFx",new Fx.Tween(bgSpan,{
+				property:"top",
+				transition:"pow:in:out",
+				link:"cancel", duration:500,
+				onComplete:function(){ this.fade(1); }.bind(li_submenu)
+			}));
 			el.addEvents({
 				"mouseenter":function(e){
 					this.retrieve("bgFx").start(0);
@@ -76,6 +85,8 @@ echo
 				"mouseleave":function(e){
 					if(!this.getParent(".mSelected"))
 						this.retrieve("bgFx").start(-74);
+
+					this.getNext(".submenu").fade(0);
 				}.bind(el)
 			});
 		});
