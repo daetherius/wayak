@@ -3,7 +3,8 @@ var mooScroll = new Class({
 	active:false,
 	steps:0,
 	options: {
-		ignoremouse:false
+		ignoremouse:false,
+		stealth:true
 	},
 	initialize: function(el, options){
 		this.setOptions(options);
@@ -17,12 +18,13 @@ var mooScroll = new Class({
 		this.handle = new Element('div.mooscroll_handle');
 		this.slider = new Element('div.mooscroll').adopt(this.handle);
 		this.el.adopt(this.slider).addEvents({
-			'mouseleave':function(){ if(!this.dragging){ this.sliderFx.drag.stop();this.opacityFx.start(0); }}.bind(this),
-			'mouseenter':function(){ this.opacityFx.start(1); }.bind(this)
+			'mouseleave':function(){ if(!this.dragging){ this.sliderFx.drag.stop(); if(this.options.stealth) this.opacityFx.start(0); }}.bind(this),
+			'mouseenter':function(){ if(this.options.stealth) this.opacityFx.start(1); }.bind(this)
 		});
 		
 		//// Fxs
-		this.opacityFx = new Fx.Tween(this.slider,{ property:'opacity', transition:'pow:out', duration:900, link:'cancel' }).set(0);
+		this.opacityFx = new Fx.Tween(this.slider,{ property:'opacity', transition:'pow:out', duration:900, link:'cancel' });
+		if(this.options.stealth) this.opacityFx.set(0);
 		this.scrollFx = new Fx.Scroll(this.el, { duration:300, /*transition:'quint:in:out',*/ link:'cancel' });
 		this.sliderFx = new Slider(this.slider, this.handle, {
 			steps: this.steps,
@@ -96,6 +98,7 @@ var mooScroll = new Class({
 		
 		this.sliderFx.setRange([0,this.steps]);
 		this.sliderFx.set(0);
+
 		this.slider.setStyle('display', this.active ? 'block':'none');
 	}
 });

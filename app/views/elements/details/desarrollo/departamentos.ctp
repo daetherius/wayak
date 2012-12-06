@@ -3,6 +3,7 @@ $visible = !empty($visible);
 echo
 	$html->div($visible ? '':'hide',null,array('id'=>'layer_departamentos')),
 		$html->div('column',null,array('id'=>'column1')),
+			$html->div('separator',''),
 			$html->div('pad'),
 				$html->tag('h2','Departamentos','title'),
 				$html->para(null,'Disfrute una majestuosa vista al mar desde uno de nuestros cómodos departamentos, que te ofrecen a ti y a tu familia amplios espacios y una ubicación privilegiada.'),
@@ -62,5 +63,4 @@ echo
 			'</div>',
 		'</div>',
 	'</div>';
-	$moo->scroll(array('column1','column2'));
 ?>

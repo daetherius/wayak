@@ -3,6 +3,7 @@ $visible = !empty($visible);
 echo
 	$html->div($visible ? '':'hide',null,array('id'=>'layer_jaal_ha')),
 		$html->div('column',null,array('id'=>'column1')),
+			$html->div('separator',''),
 			$html->div('pad'),
 				$html->tag('h2','Villas Jaal-Há','title'),
 				$html->para(null,'Místicos amaneceres y majestuosos atardeceres, Las Villas Jaal-Há son para  aquello que quieren vivir el sueño Wayak al máximo. Ideada para los que no quieren escatimar en comodidades. Su exclusivo Penthouse y todo el equipamiento que una residencia de lujo puede aspirar, hacen hacen de la vida a la orilla del mar una experiencia única.'),
@@ -34,7 +35,7 @@ echo
 					$html->tag('li','Garage privado para cuatro vehículos.'),
 				'</ul>',
 
-				$html->div('title title3','Planta Baja'),
+				$html->div('title title3','Planta Alta'),
 				$html->tag('ul'),
 					$html->tag('li','Tres habitaciones con clóset (caoba y cedro).'),
 					$html->tag('li','Balcón techado en cada habitación.'),

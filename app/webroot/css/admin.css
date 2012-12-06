@@ -463,7 +463,7 @@ div.uploadinfo a{ text-decoration:underline; }
 
 /** :CONTENT **/
 
-.controles{ margin-bottom:15px; }
+.controles{ margin-bottom:15px;overflow:hidden; }
 .controles form{
 	float:right;
 	width:316px;

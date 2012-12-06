@@ -62,35 +62,53 @@ echo
 	
 	$moo->buffer('window.addEvent("load", function() {
 		$("nofooter").setStyles({"opacity":0,"visibility":"visible"}).fade(1);
+
 		$$("#menu > li > a").each(function(el){
 			var bgSpan = el.getElement("span.bg");
+			var oncomplete = function(){};
 			var li_submenu = el.getNext(".submenu");
-			
-			if(li_submenu)
-				li_submenu.setStyle("opacity",0);
+			var li = el.getParent();
+
+			if(li_submenu!=null){
+				var fadeFx = new Fx.Tween(li_submenu,{ property:"opacity", link:"cancel", transition:"pow:in:out", duration:600 }).set(0);
+				li.store("fadeFx",fadeFx);
+				
+				oncomplete = function(){
+					this.retrieve("fadeFx").start(this.getStyle("opacity").toInt() ? 0 : 1);
+				}.bind(li_submenu);
+			}
 
 			if(!bgSpan.getParent(".mSelected"))
 				bgSpan.setStyle("top",-74);
 
-			el.store("bgFx",new Fx.Tween(bgSpan,{
+			li.store("bgFx",new Fx.Tween(bgSpan,{
 				property:"top",
 				transition:"pow:in:out",
-				link:"cancel", duration:500,
-				onComplete:function(){ this.fade(1); }.bind(li_submenu)
+				link:"cancel",
+				duration:350
 			}));
-			el.addEvents({
-				"mouseenter":function(e){
-					this.retrieve("bgFx").start(0);
-				}.bind(el),
-				"mouseleave":function(e){
-					if(!this.getParent(".mSelected"))
-						this.retrieve("bgFx").start(-74);
 
-					this.getNext(".submenu").fade(0);
-				}.bind(el)
+			li.addEvents({
+				"mouseenter":function(e){
+					li.addClass("bgFx");
+					if(this.getElement(".submenu") != null)
+						this.retrieve("bgFx").start(0).chain(function(){ this.retrieve("fadeFx").start(1); }.bind(this));
+					else
+						this.retrieve("bgFx").start(0);
+
+				}.bind(li),
+				"mouseleave":function(e){
+					if(!this.hasClass("mSelected")){
+						if(this.getElement(".submenu") != null)
+							this.retrieve("fadeFx").start(0).chain(function(){ this.retrieve("bgFx").start(-74).chain(function(){ this.removeClass("bgFx"); }.bind(this)); }.bind(this));
+						else
+							this.retrieve("bgFx").start(-74).chain(function(){ this.removeClass("bgFx"); }.bind(this));
+					}
+
+				}.bind(li)
 			});
 		});
-		'.$onLoad.' });
+		'.$onLoad.' }); console.log(body.getDimensions().y);
 	');
 	
 	echo

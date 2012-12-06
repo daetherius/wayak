@@ -33,7 +33,7 @@ echo
 					$html->tag('li','Garage privado para cuatro vehículos.'),
 				'</ul>',
 
-				$html->div('title title3','Planta Baja'),
+				$html->div('title title3','Planta Alta'),
 				$html->tag('ul'),
 					$html->tag('li','Tres habitaciones con clóset (caoba y cedro).'),
 					$html->tag('li','Balcón techado en cada habitación.'),

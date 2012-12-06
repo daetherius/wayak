@@ -18,14 +18,20 @@ foreach(Configure::read('Modules') as $cntllr => $mod){
 					$rootUrl = array('controller'=>'desarrollo','action'=>'jaal_ha');
 					$submenu = 	$html->tag('li',$html->link('Villas',array('controller'=>'desarrollo','action'=>'jaal_ha')),array('class'=>$sub_for_layout == 'villas' ? 'selected':'')).
 								$html->tag('li',$html->link('Departamentos',array('controller'=>'desarrollo','action'=>'departamentos')),array('class'=>$sub_for_layout == 'departamentos' ? 'selected':'')).
-								$html->tag('li',$html->link('Amenidades',array('controller'=>'desarrollo','action'=>'amenidades')),array('class'=>$sub_for_layout == 'amenidades' ? 'selected':'')).
-								(!empty($galleries['desarrollo']['Albumimg']) ? $html->tag('li',$html->link('Galería','/'.$galleries['desarrollo']['Albumimg'][0]['src'],array('class'=>'pulsembox','rel'=>'gallery_desarrollo'))): '');
+								$html->tag('li',$html->link('Amenidades',array('controller'=>'desarrollo','action'=>'amenidades')),array('class'=>$sub_for_layout == 'amenidades' ? 'selected':''));
+								if(!empty($galleries['desarrollo']['Albumimg'])){
+									$desc = $galleries['desarrollo']['Albumimg'][0]['descripcion'];
+									$submenu.= $html->tag('li',$html->link('Galería','/'.$galleries['desarrollo']['Albumimg'][0]['src'],array('class'=>'pulsembox','rel'=>'gallery_desarrollo','name'=>_dec($desc),'title'=>strip_tags($desc))));
+								}
 				break;
 
 				case 'palm':
 					$rootUrl = array('controller'=>'palm','action'=>'pentgarden');
-					$submenu = 	$html->tag('li',$html->link('Departamentos',array('controller'=>'palm','action'=>'pentgarden')),array('class'=>$this->params['controller'] == 'palm' ? 'selected':'')).
-								(!empty($galleries['palm']['Albumimg']) ? $html->tag('li',$html->link('Galería','/'.$galleries['palm']['Albumimg'][0]['src'],array('class'=>'pulsembox','rel'=>'gallery_palm'))): '');
+					$submenu = 	$html->tag('li',$html->link('Departamentos',array('controller'=>'palm','action'=>'pentgarden')),array('class'=>$this->params['controller'] == 'palm' ? 'selected':''));
+								if(!empty($galleries['palm']['Albumimg'])){
+									$desc = $galleries['palm']['Albumimg'][0]['descripcion'];
+									$submenu.= $html->tag('li',$html->link('Galería','/'.$galleries['palm']['Albumimg'][0]['src'],array('class'=>'pulsembox','rel'=>'gallery_palm','name'=>_dec($desc),'title'=>strip_tags($desc))));
+								}
 				default:
 				break;
 			}
@@ -37,7 +43,7 @@ foreach(Configure::read('Modules') as $cntllr => $mod){
 					$src = '/'.$img['src'];
 					$desc = $img['descripcion'];
 
-					$gallery.= $html->link(basename($src),$src,array('class'=>'pulsembox','rel'=>'gallery_'.$cntllr,'name'=>_dec($desc),'title'=>$desc));
+					$gallery.= $html->link(basename($src),$src,array('class'=>'pulsembox','rel'=>'gallery_'.$cntllr,'name'=>_dec($desc),'title'=>strip_tags($desc)));
 				}
 			}
 

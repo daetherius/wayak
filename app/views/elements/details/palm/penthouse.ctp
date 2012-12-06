@@ -3,6 +3,7 @@ $visible = !empty($visible);
 echo
 	$html->div($visible ? '':'hide',null,array('id'=>'layer_penthouse')),
 		$html->div('column',null,array('id'=>'column1')),
+			$html->div('separator',''),
 			$html->div('pad'),
 				$html->tag('h2','Penthouse','title'),
 				$html->para(null,'Vive el privilegio de vivir en nuestra Torre de Departamentos más lujosa.'),

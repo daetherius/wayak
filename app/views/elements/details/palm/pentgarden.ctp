@@ -1,9 +1,9 @@
 <?php
 $visible = !empty($visible);
-fb($album,'$album');
 echo
 	$html->div($visible ? '':'hide',null,array('id'=>'layer_pentgarden')),
 		$html->div('column',null,array('id'=>'column5')),
+			$html->div('separator',''),
 			$html->div('pad'),
 				$html->tag('h2','Pentgarden','title'),
 				$html->para(null,'Vive el privilegio de vivir en nuestra Torre de Departamentos más lujosa.'),

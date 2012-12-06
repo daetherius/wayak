@@ -13,6 +13,6 @@ if($tweets && in_array($this->params['controller'], array('contacto','events')))
 		}
 			
 	echo '</ul></div>';
-	$moo->scroller('tweets');
+	$moo->scroller('tweets',array('fx_delay'=>200));
 }
 ?>

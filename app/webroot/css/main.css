@@ -191,6 +191,7 @@ h3:first-child, h3.alpha { margin-top:0; }
 	z-index:-1;
 	overflow:hidden;
 }
+#bg_showcase .mooshowcase_container, #bg_showcase .mooshowcase_wrapper { height:100%; }
 
 #bg_showcase img, body > img.bg {
 	display:block;
@@ -226,7 +227,8 @@ body > img.bg { position:absolute; }
 	font-family:PetitaB, Verdana,​ Geneva,​ sans-serif;
 }
 #menu li { margin:0;overflow:hidden;height:74px;position:relative; }
-#menu li:hover { overflow:visible; }
+#menu li:hover, #menu li.bgFx { overflow:visible; }
+#menu li:hover .submenu { display:block; }
 #menu li, #menu li a { display:-moz-inline-stack;display:inline-block;vertical-align:top;zoom:1;*display:inline; }
 #menu li a {
 	position:relative;
@@ -247,18 +249,20 @@ body > img.bg { position:absolute; }
 	top:0;
 	left:0;
 	width:100%;
-	height:100%;
+	height:0%;
 	background:url(/img/menu.png) repeat;
 	display:block;
 	z-index:-1;
 }
-#menu li:hover > a .bg, #menu li.mSelected a .bg {  }
+#menu li.bgFx > a > .bg,
+#menu li:hover > a > .bg,
+#menu li.mSelected a > .bg { height:100%; }
 
 .c_palm #menu > li > a > .bg { background:#98BE10; }
 
 .submenu {
 	position:absolute;
-	display:block;
+	display:none;
 	top:100%;
 	left:-50px;
 	width:500px;
@@ -578,18 +582,26 @@ div.captcha > span { padding-left:12px; }
 .sections .title { color:#1677b8;font-weight:bold; }
 .c_palm .sections .title { color:#31573a; }
 .column {
+	position:relative;
 	float:left;
 	width:469px;
 	height:360px;
 	color:#002D45;
 	padding:0 0 15px 0;
 }
+.column .separator {
+	position:absolute;
+	top:0;
+	right:0;
+	width:2px;
+	height:100%;
+	background:#002C44;
+}
 .column > .pad { padding:0 0 20px; }
 .c_palm .column { color:#005635; }
 .column:first-child {
 	margin-right:20px;
 	padding-right:20px;
-	border-right:#002C44 solid 2px;
 	width:449px;
 }
 .c_palm .column:first-child { border-color:#0A5E34; }
@@ -677,7 +689,7 @@ div.captcha > span { padding-left:12px; }
 .c_contacto .form label{ padding:8px 5px;font-weight:bold; }
 .c_contacto .form p:first {  }
 .c_contacto .form .subform { padding:0; }
-.c_contacto .form .input.text input, .input textarea { width:95%; }
+.c_contacto .form .input.text input, .input textarea { width:95%;color:#816439; }
 .c_contacto .form .input.text { margin:0 0 10px; }
 .c_contacto .form .input.textarea { padding:0; }
 .c_contacto .form .submit { margin:0 0 12px; }

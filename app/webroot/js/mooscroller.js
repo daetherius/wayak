@@ -39,8 +39,9 @@ var mooScroller = new Class({
 			height:'100%',
 			top:0,
 			left:0
-		}).fade('out');
+		}).set('tween',{duration:this.options.fx_delay}).fade('out');
 		this.total_panes = this.panes.length;
+		
 		if(this.list){
 			this.listoptions = this.list.getElements(this.options.listselector);
 			this.total_options = this.listoptions.length;
@@ -72,8 +73,7 @@ var mooScroller = new Class({
 			this.listoptions[idx].addClass('selected');
 		}
 
-		this.panes[prev].fade('out');
-		this.panes[idx].fade('in');
+		this.panes[prev].fade('out').get('tween').chain(function(){ this.panes[idx].fade('in'); }.bind(this));
 		this.current_idx = idx;
 
 	},

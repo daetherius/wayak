@@ -11,6 +11,7 @@ var mooShowcase = new Class({
 		numbers: false,
 		nextprev: false,
 		spinner: true,
+		fullscreen: false,
 		fadenav: true,
 		duration: 1200,
 		captionheight: 72, // caption area height
@@ -171,7 +172,9 @@ var mooShowcase = new Class({
 		}
 
 		// Disminución de altura
-		this.fxHeight.start(this.snaps[next].getSize().y);
+		if(!this.options.fullscreen)
+			this.fxHeight.start(this.snaps[next].getSize().y);
+
 		this.fx[current].start(0);
 		this.fx[next].start(1);
 

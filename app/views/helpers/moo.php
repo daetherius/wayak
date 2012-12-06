@@ -161,7 +161,7 @@ class MooHelper extends JsHelper {
 	}
 
 	function scroller($el='',$options = array()){
-		$options = $this->Util->json(am(array('auto'=>true),$options));
+		$options = $this->Util->json(array_merge(array('auto'=>true),$options));
 		//$this->Html->script('mooscroller',false);
 		if($el)
 			$this->buffer('new mooScroller("'.$el.'"'.$options.');');
@@ -169,7 +169,7 @@ class MooHelper extends JsHelper {
 
 	function scroll($els=array(),$options = array()){
 		$els = (array)$els;
-		$options = $this->Util->json($options);
+		$options = $this->Util->json(array_merge($options,array('stealth'=>false)));
 		$this->Html->script('mooscroll',false);
 		$this->Html->css('mooscroll','stylesheet',array('inline'=>false));
 		
@@ -330,7 +330,7 @@ class MooHelper extends JsHelper {
 				if($data && isset($data[$i][$defaultmodel][$field]))
 					$value = $data[$i][$defaultmodel][$field];
 
-				$attr = am(
+				$attr = array_merge(
 					array(
 						'value'=>_dec($value),
 						'type'=>!$opts['edit'] ? 'hidden':null,
@@ -371,7 +371,7 @@ class MooHelper extends JsHelper {
 				foreach($options['custom'] as $custom){
 					$customText = $custom['text']; unset($custom['text']);
 					$customAction = $custom['action']; unset($custom['action']);
-					$customUrl = am(array('admin'=>true,'action'=>$customAction,$data[$i][$model]['id']),$custom);
+					$customUrl = array_merge(array('admin'=>true,'action'=>$customAction,$data[$i][$model]['id']),$custom);
 
 					$inner.= $this->Html->link($customText, $customUrl, array('class'=>'datagridButton')); ###
 				}
@@ -416,7 +416,7 @@ class MooHelper extends JsHelper {
 				$editableIdx = $defaultmodel.'.'.$editable;
 			}
 
-			$attr = am(array('class'=>'','div'=>'','type'=>false),$fields[$editableIdx]);
+			$attr = array_merge(array('class'=>'','div'=>'','type'=>false),$fields[$editableIdx]);
 
 			$div = $attr['div'];
 			$class = $attr['class'];
@@ -431,7 +431,7 @@ class MooHelper extends JsHelper {
 			//$editableList.= $this->Form->input(implode('.',array($model,'{n}',$editable)),array('label'=>false,'class'=>'elist_input elist_input_unselected'));
 			$editableList.= $this->Form->input(
 				implode('.',array($defaultmodel,'{n}',$editable)),
-				am(array(
+				array_merge(array(
 					'label'=>false,
 					'div'=>'ib '.$div,
 					'format'=>array('before', 'between', 'input', 'after','label', 'error'),
