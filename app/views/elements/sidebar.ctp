@@ -32,7 +32,6 @@ if(is_c('events',$this)){
 	}
 	*/
 
-	$moo->buffer('window.addEvent("domready", function(){ console.log($("body").getFirst(".content").getStyle("height"));$("sidebar_pad").setStyle("height",$("body").getFirst(".content").getStyle("height")); });');
 }
 
 if(is_c('contacto',$this)){
@@ -42,6 +41,8 @@ if(is_c('contacto',$this)){
 		$html->para(null,$util->ofuscar('info@villaswayak.com')),
 		$html->div('','',array('id'=>'mapa')),
 
+		/*
+		*/
 		$html->script('http://maps.google.com/maps/api/js?sensor=false'),
 		$moo->buffer('var latLong = new google.maps.LatLng(21.326324,-89.417908);
 		var map = new google.maps.Map(document.getElementById("mapa"), { zoom: 16, center: latLong, mapTypeId: google.maps.MapTypeId.SATELLITE });

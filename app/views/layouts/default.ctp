@@ -55,13 +55,18 @@ echo
   <script type="text/javascript">$("nofooter").setStyles({"opacity":0,"visibility":"visible"});</script>
 <?php
 	$onLoad = '';
-	if(in_array($this->params['controller'],array('desarrollo','palm'))){
-		$moo->addEvent('.section_nav a','click','$$(".section_nav a").removeClass("selected");this.addClass("selected");$$(".sections > div").addClass("hide"); $("layer_"+this.get("id")).removeClass("hide");',array('prevent'=>true,'css'=>true));
+	$sidebar_height = '';
 
+	if(is_c(array('desarrollo','palm'),$this)){
+		$moo->addEvent('.section_nav a','click','$$(".section_nav a").removeClass("selected");this.addClass("selected");$$(".sections > div").addClass("hide"); $("layer_"+this.get("id")).removeClass("hide");',array('prevent'=>true,'css'=>true));
 		$onLoad = '$("outside").set("tween",{duration:1200,unit:"%"}).tween("left",0);';
+
+	}elseif(is_c('events',$this)){
+		$sidebar_height = '$("sidebar_pad").setStyle("height",$("body").getFirst(".content").getStyle("height"));';
 	}
 	
 	$moo->buffer('window.addEvent("load", function() {
+		'.$sidebar_height.'
 		$("nofooter").fade(1);
 
 		$$("#menu > li > a").each(function(el){
@@ -114,7 +119,7 @@ echo
 				}.bind(li)
 			});
 		});
-		'.$onLoad.' }); console.log(body.getDimensions().y);
+		'.$onLoad.' });
 	');
 	
 	echo

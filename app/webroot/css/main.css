@@ -196,21 +196,19 @@ h3:first-child, h3.alpha { margin-top:0; }
 	overflow:hidden;
 }
 #bg_showcase .mooshowcase_container, #bg_showcase .mooshowcase_wrapper { height:100%; }
-
-#bg_showcase img, body > img.bg {
+#bg_showcase img{
 	display:block;
 	min-height: 100%;
-	min-width: 1440px;
+	min-width: 1400px;
 
 	width: 100%;
 	height: auto;
 
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: -2;
 }
-body > img.bg { position:absolute; }
 
 .tweets {
 	float:right;
@@ -352,6 +350,7 @@ body > img.bg { position:absolute; }
 .c_events #body > .sidebar { background:url(/img/trans_white.png);  }
 .c_events #body > .content { background:url(/img/trans_aqua.png); }
 .c_events #body > .content > .pad { padding:26px 20px 120px; }
+.c_contacto #body > .sidebar > .pad { padding-top:147px; }
 
 /* #body > .content > .pad { padding:0 0; } */
 
@@ -363,8 +362,9 @@ body > img.bg { position:absolute; }
 	font-weight:bold;
 	color:#00C3F4;
 	line-height:40px;
-	padding:10px 0 0 0;
+	padding:10px 16px 0 0;
 	font-family:PetitaB, Verdana,​Geneva,​sans-serif;
+	background:transparent url(/img/triangulo.png) no-repeat 280px 25px;
 }
 
 .nav { background:url(/img/trans_white.png);overflow:hidden;margin:0 0 0; }
@@ -386,8 +386,13 @@ body > img.bg { position:absolute; }
 
 .facebook { width:70px;margin:15px 0 0 auto; }
 .sidebar #mapa {
-	width:100%;
+	width:311px;
 	height:260px;
+	border:#17B7F5 solid 2px;
+	-moz-border-radius:3px;
+	-khtml-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
 }
 
 /******** @GENERAL ************************************************/
