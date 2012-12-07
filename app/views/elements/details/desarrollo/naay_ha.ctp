@@ -3,6 +3,7 @@ $visible = !empty($visible);
 echo
 	$html->div($visible ? '':'hide',null,array('id'=>'layer_naay_ha')),
 		$html->div('column',null,array('id'=>'column3')),
+			$html->div('separator',''),
 			$html->div('pad'),
 				$html->tag('h2','Villas Naay-Há','title'),
 				$html->para(null,'Diseñada para satisfacer los más exigentes gustos, su diseño arquitectonico fusiona belleza y funcionalidad. Sus terrazas y balcones así como como sus cuatro habitaciones todas con vista al mar, transforma Naay-Há una fantasía hecha realidad.'),

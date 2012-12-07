@@ -56,7 +56,7 @@ foreach(Configure::read('Modules') as $cntllr => $mod){
 					$html->tag('span',$mod['menu']).$html->tag('span','','bg'),
 					 in_array($cntllr, array('desarrollo','palm')) ? $rootUrl : array('controller'=>$cntllr,'action'=>'index')
 				).$submenu,
-				array('class'=>$this->params['controller'] == $cntllr ? 'mSelected' : '')
+				($this->params['controller'] == $cntllr ? 'mSelected' : '').' m'.ucfirst($cntllr)
 			);
 	}
 }

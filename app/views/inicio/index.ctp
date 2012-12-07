@@ -8,7 +8,11 @@ echo
 		$html->tag('span','Sueño','medium'),' ',
 		$html->tag('span','Wayak'),	
 	'</h2>';
-	$moo->buffer('$("home_irregular_title").fade.delay(4000,$("home_irregular_title"),0);');
+	$moo->buffer('
+		var irreg = $("home_irregular_title");
+		(function(){ this.fade(0);(function(){ this.fade(0); }).periodical(16000,this); }).delay(4000,irreg);
+		(function(){ this.fade(1); }).periodical(16000,irreg);
+	');
 ?>
 </div>
 </div>

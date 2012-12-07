@@ -52,6 +52,7 @@ echo
 ?>
   <script src="//ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools-yui-compressed.js"></script>
   <script>window.MooTools || document.write('<script src="/js/moo13.js"><\/script>')</script>
+  <script type="text/javascript">$("nofooter").setStyles({"opacity":0,"visibility":"visible"});</script>
 <?php
 	$onLoad = '';
 	if(in_array($this->params['controller'],array('desarrollo','palm'))){
@@ -61,12 +62,13 @@ echo
 	}
 	
 	$moo->buffer('window.addEvent("load", function() {
-		$("nofooter").setStyles({"opacity":0,"visibility":"visible"}).fade(1);
+		$("nofooter").fade(1);
 
 		$$("#menu > li > a").each(function(el){
 			var bgSpan = el.getElement("span.bg");
 			var oncomplete = function(){};
 			var li_submenu = el.getNext(".submenu");
+			li_submenu = null;
 			var li = el.getParent();
 
 			if(li_submenu!=null){
@@ -91,17 +93,21 @@ echo
 			li.addEvents({
 				"mouseenter":function(e){
 					li.addClass("bgFx");
+					/*
 					if(this.getElement(".submenu") != null)
 						this.retrieve("bgFx").start(0).chain(function(){ this.retrieve("fadeFx").start(1); }.bind(this));
 					else
+					*/
 						this.retrieve("bgFx").start(0);
 
 				}.bind(li),
 				"mouseleave":function(e){
 					if(!this.hasClass("mSelected")){
+					/*
 						if(this.getElement(".submenu") != null)
 							this.retrieve("fadeFx").start(0).chain(function(){ this.retrieve("bgFx").start(-74).chain(function(){ this.removeClass("bgFx"); }.bind(this)); }.bind(this));
 						else
+					*/
 							this.retrieve("bgFx").start(-74).chain(function(){ this.removeClass("bgFx"); }.bind(this));
 					}
 

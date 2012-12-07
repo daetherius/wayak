@@ -1,9 +1,13 @@
 /*
 	aqua #21CAF5
-	texto #002C44
+	dark #002C44
+
+	PALM
+	verde #21CAF5
+	dark #002C44
 */
 
-body { position:relative;background:#fff url(/img/spinner.gif) no-repeat center center;color:#002C44;font-family:PetitaB, Verdana,​Geneva,​sans-serif;font-size:16px;font-weight:normal; }
+body { position:relative;background:#fff url(/img/spinner.gif) no-repeat center center;color:#002C44;font-family:PetitaB, Verdana,​Geneva,​sans-serif;font-size:17px;font-weight:normal; }
 a, a:visited { color:#0078BC;text-decoration:none;outline:0; }
 a:hover, a:focus { color:#0078BC;text-decoration:underline; }
 .mceEditor{ display:block;padding:0;background:none;	} /* Outline fix for validation errors */
@@ -127,7 +131,7 @@ h3:first-child, h3.alpha { margin-top:0; }
 	top:242px;
 	left:0;
 	width:100%;
-	height: 390px;
+	height: 528px;
 	z-index:-1;
 	overflow:hidden;
 }
@@ -196,7 +200,7 @@ h3:first-child, h3.alpha { margin-top:0; }
 #bg_showcase img, body > img.bg {
 	display:block;
 	min-height: 100%;
-	min-width: 1280px;
+	min-width: 1440px;
 
 	width: 100%;
 	height: auto;
@@ -226,7 +230,7 @@ body > img.bg { position:absolute; }
 	padding:0;
 	font-family:PetitaB, Verdana,​ Geneva,​ sans-serif;
 }
-#menu li { margin:0;overflow:hidden;height:74px;position:relative; }
+#menu li { margin:0;overflow:hidden;height:74px;position:relative;overflow:visible; }
 #menu li:hover, #menu li.bgFx { overflow:visible; }
 #menu li:hover .submenu { display:block; }
 #menu li, #menu li a { display:-moz-inline-stack;display:inline-block;vertical-align:top;zoom:1;*display:inline; }
@@ -263,11 +267,13 @@ body > img.bg { position:absolute; }
 .submenu {
 	position:absolute;
 	display:none;
+	display:block;
 	top:100%;
-	left:-50px;
-	width:500px;
+	left:0;
+	width:400px;
 	text-align:left;
 }
+.mDesarrollo .submenu { left:-80px;width: 600px; }
 #menu .submenu li {
 	margin:0;
 	height:auto;
@@ -455,7 +461,7 @@ div.captcha > span { padding-left:12px; }
 
 .date { font-size:10px;margin:5px 0 0 0; }
 .desc {  }
-.desc p, .column p { margin:0 0 10px 0;line-height:19px;font-weight:normal;text-align: justify; }
+.desc p, .column p { margin:0 0 20px 0;line-height:19px;font-weight:normal;text-align: justify; }
 .comments {
 	float:left;
 	width:45px;
@@ -578,16 +584,16 @@ div.captcha > span { padding-left:12px; }
 .c_palm .section_nav > a.selected,
 .c_palm .section_nav > a:hover { background:#005635; }
 
-.sections { padding:15px 0;height:360px; }
+.sections { padding:15px 0;height:498px; }
 .sections .title { color:#1677b8;font-weight:bold; }
 .c_palm .sections .title { color:#31573a; }
 .column {
 	position:relative;
 	float:left;
 	width:469px;
-	height:360px;
+	height:478px;
 	color:#002D45;
-	padding:0 0 15px 0;
+	padding:0;
 }
 .column .separator {
 	position:absolute;
@@ -597,20 +603,20 @@ div.captcha > span { padding-left:12px; }
 	height:100%;
 	background:#002C44;
 }
-.column > .pad { padding:0 0 20px; }
+.column > .pad { padding:0 0 ; }
 .c_palm .column { color:#005635; }
 .column:first-child {
 	margin-right:20px;
-	padding-right:20px;
-	width:449px;
+	padding-right:110px;
+	width:359px;
 }
 .c_palm .column:first-child { border-color:#0A5E34; }
 .column h2.title { font-size:28px;margin:24px 0 16px; }
 .column h2.title:first-child { margin-top:10px; }
 .column .title3 {
-	font-size:18px;
-	color:#222;
-	margin:15px 0 8px;
+	font-size:17px;
+	color:#002C44;
+	margin:15px 0 6px;
 	font-family:PetitaB, Verdana,​Geneva,​sans-serif;
 	font-weight:bold;
 }
@@ -619,23 +625,25 @@ div.captcha > span { padding-left:12px; }
 	font-size:14px;
 	margin:0 0 0 18px;
 }
-.column ul { list-style-type:disc;margin:0 0 16px; }
+.column ul { list-style-type:disc;margin:0; }
 
 .column .pad a {
 	display:-moz-inline-stack;display:inline-block;vertical-align:top;zoom:1;*display:inline;
 	background:transparent url(/img/button.png);
-	padding:4px 16px;
+	padding:8px 20px;
 	color:#fff;
+	font-size:14px;
 	text-decoration:none;
 	text-transform:uppercase;
-	margin:10px 0;
+	margin:10px 0 0 0;
 }
-.column .pad p a { margin:20px 0 0 0; }
-
 .c_palm .column .pad  a { background:#98BE10; }
 
 .column .pad  a:hover { background:transparent url(/img/submenu_hover.png); }
 .c_palm .column .pad  a:hover { background:#4D7427; }
+.c_palm .column .title3 { color:#; }
+
+.c_palm .mooscroll_handle {	background-color:#98BE10; }
 
 /******** @ABOUT ************************************************/
 
