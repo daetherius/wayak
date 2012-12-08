@@ -204,11 +204,13 @@ h3:first-child, h3.alpha { margin-top:0; }
 	width: 100%;
 	height: auto;
 
-	position: fixed;
+	position:fixed;
 	top: 0;
 	left: 0;
 	z-index: -2;
 }
+.c_desarrollo #bg_showcase img,
+.c_palm #bg_showcase img { position:absolute; }
 
 .tweets {
 	float:right;
