@@ -705,6 +705,7 @@ div.captcha > span { padding-left:12px; }
 .c_contacto .form .input.text input, .input textarea { width:95%;color:#816439; }
 .c_contacto .form .input.text { margin:0 0 10px; }
 .c_contacto .form .input.textarea { padding:0; }
+.c_contacto .form .input textarea { height:161px; }
 .c_contacto .form .submit { margin:0 0 12px; }
 .c_contacto .form input[type=submit] {
 	margin:0;
