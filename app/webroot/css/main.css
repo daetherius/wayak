@@ -409,7 +409,7 @@ h3:first-child, h3.alpha { margin-top:0; }
 	border-radius:6px;
 }
 .highlight{ background:#ff8; }
-.leydatos { padding:0 8px 4px 8px;line-height:12px;text-align:center;color:#777;font-size:90%; }
+.leydatos { padding:0 8px 4px 8px;line-height:16px;text-align:center;color:#777;font-size:90%; }
 
 .bulleted { margin:0 0 20px 0; }
 .bulleted li { margin:0; }
