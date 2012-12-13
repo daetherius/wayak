@@ -231,7 +231,7 @@ h3:first-child, h3.alpha { margin-top:0; }
 	font-family:PetitaB, Verdana,​ Geneva,​ sans-serif;
 }
 #menu li { margin:0;overflow:hidden;height:74px;position:relative; }
-#menu li:hover, #menu li.bgFx { overflow:visible; }
+#menu li.mSelected { overflow:visible; }
 #menu li:hover .submenu { display:block; }
 #menu li, #menu li a { display:-moz-inline-stack;display:inline-block;vertical-align:top;zoom:1;*display:inline; }
 #menu li a {

@@ -73,7 +73,6 @@ echo
 			var bgSpan = el.getElement("span.bg");
 			var oncomplete = function(){};
 			var li_submenu = el.getNext(".submenu");
-			li_submenu = null;
 			var li = el.getParent();
 
 			if(li_submenu!=null){
@@ -98,26 +97,20 @@ echo
 			li.addEvents({
 				"mouseenter":function(e){
 					li.addClass("bgFx");
-					/*
-					if(this.getElement(".submenu") != null)
-						this.retrieve("bgFx").start(0).chain(function(){ this.retrieve("fadeFx").start(1); }.bind(this));
-					else
-					*/
-						this.retrieve("bgFx").start(0);
+					this.retrieve("bgFx").start(0);
 
 				}.bind(li),
 				"mouseleave":function(e){
 					if(!this.hasClass("mSelected")){
-					/*
-						if(this.getElement(".submenu") != null)
-							this.retrieve("fadeFx").start(0).chain(function(){ this.retrieve("bgFx").start(-74).chain(function(){ this.removeClass("bgFx"); }.bind(this)); }.bind(this));
-						else
-					*/
-							this.retrieve("bgFx").start(-74).chain(function(){ this.removeClass("bgFx"); }.bind(this));
+						this.retrieve("bgFx").start(-74).chain(function(){ this.removeClass("bgFx"); }.bind(this));
 					}
 
 				}.bind(li)
 			});
+			
+			if(li.hasClass("mSelected") && li_submenu != null){
+				li.retrieve("fadeFx").start(1);
+			}
 		});
 		'.$onLoad.' });
 	');
