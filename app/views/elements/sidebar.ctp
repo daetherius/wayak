@@ -41,11 +41,9 @@ if(is_c('contacto',$this)){
 		$html->para(null,$util->ofuscar('info@villaswayak.com')),
 		$html->div('','',array('id'=>'mapa')),
 
-		/*
-		*/
 		$html->script('http://maps.google.com/maps/api/js?sensor=false'),
-		$moo->buffer('var latLong = new google.maps.LatLng(21.326324,-89.417908);
-		var map = new google.maps.Map(document.getElementById("mapa"), { zoom: 16, center: latLong, mapTypeId: google.maps.MapTypeId.SATELLITE });
+		$moo->buffer('var latLong = new google.maps.LatLng(21.325968,-89.421984);
+		var map = new google.maps.Map(document.getElementById("mapa"), { zoom: 15, center: latLong, mapTypeId: google.maps.MapTypeId.SATELLITE });
 		var beachMarker = new google.maps.Marker({
 			position: latLong,
 			map: map,

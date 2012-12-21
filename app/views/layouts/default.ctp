@@ -30,7 +30,7 @@
 <?php
 echo
 	$html->tag('body',null,'c_'.$this->params['controller'].' a_'.$this->params['action']),
-	$html->div('wrap'),
+	$html->div('wrap',null,array('id'=>'wrap')),
 		$this->element('bg'),
 		$html->div('',$html->div('outside','',array('id'=>'outside')),array('id'=>'white_strap')),
 		$html->div(null,null,array('id'=>'nofooter')),
@@ -52,7 +52,7 @@ echo
 ?>
   <script src="//ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools-yui-compressed.js"></script>
   <script>window.MooTools || document.write('<script src="/js/moo13.js"><\/script>')</script>
-  <script type="text/javascript">$("nofooter").setStyles({"opacity":0,"visibility":"visible"});</script>
+  <script type="text/javascript">$("wrap").setStyles({"opacity":0,"visibility":"visible"});</script>
 <?php
 	$onLoad = '';
 	$sidebar_height = '';
@@ -67,7 +67,7 @@ echo
 	
 	$moo->buffer('window.addEvent("load", function() {
 		'.$sidebar_height.'
-		$("nofooter").fade(1);
+		$("wrap").fade(1);
 
 		$$("#menu > li > a").each(function(el){
 			var bgSpan = el.getElement("span.bg");
@@ -119,7 +119,7 @@ echo
 		$html->script(array('moo13m','utils','pulsembox','mooshowcase','mooscroller')),
 		$scripts_for_layout,
 		$moo->writeBuffer(array('onDomReady'=>false)),
-		$html->tag('noscript',$html->tag('style','#nofooter { visibility:visible } #outside { left:0; }',array('type'=>'text/css'))),
+		$html->tag('noscript',$html->tag('style','#wrap { visibility:visible } #outside { left:0; }',array('type'=>'text/css'))),
 		//$this->element('gfont',array('fonts'=>array('Cantarell','Droid+Serif'))),
 	'';
 ?>

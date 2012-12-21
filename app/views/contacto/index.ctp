@@ -20,7 +20,7 @@ echo
 	'</div>',
 
 	$moo->ajaxform('ContactForm');
-	$moo->placeholder(array('color'=>'#816439'));
+	$moo->placeholder(array('color'=>'#a4a4a4'));
 ?>
 </div>
 </div><!-- .content -->
