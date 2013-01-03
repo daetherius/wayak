@@ -165,7 +165,7 @@ h3:first-child, h3.alpha { margin-top:0; }
 	overflow: hidden;
 }
 
-.c_palm #logo a { background:#005447 url(/img/palm.png) no-repeat center center; }
+.c_palm #logo a { background:transparent url(/img/palm.png) no-repeat center center; }
 .social {
 	float:right;
 	width:82px;
