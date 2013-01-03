@@ -1,6 +1,6 @@
 <div class="error_info">
 	<div class="title title1"><img src="/img/admin/error.png" alt="ERROR"/><span>¡Vaya, algo salió mal!</span></div>
-	<p class="title title3">Es posible que ésta página haya sido movida, eliminada o que realmente nunca haya <a href="javascript:;" title="Cha-chaaaaam!">existido</a>.</p>
+	<p class="title title3">Es posible que ésta página haya sido movida, eliminada o que realmente nunca haya existido.</p>
 	<p><a href="javascript:history.back();">Regrese a la página anterior</a>, o bien puede <a href="/">Ir a la página de inicio del sitio</a>.</p>
 	<p><a id="seeDetails" href="javascript:;">Detalles</a></p>
 	<div id="details">

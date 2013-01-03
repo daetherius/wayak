@@ -273,20 +273,21 @@ body.tmce { background:#fff;padding:0;margin:0; }
 /** Error page **/
 
 body.error{ background:#f0f0f0;color:#555;font-size:12px; }
-.error_page { width:640px;margin:0 auto;padding:30px 0 50px 0; }
+.error_page { width:640px;margin:0 auto;padding:0 0 50px 0; }
 .error_page #logo { margin:0 auto;float:none;background-position:center center; }
 .error_page .error_info { text-align:center;width:496px;margin:0 auto; }
 .error_page .error_info .title:first-child{
 	height:94px;
 	line-height:94px;
 	margin:20px 0;
-	font-size:40px;
+	font-size:34px;
 }
 .error_page .error_info .title:first-child img,
 .error_page .error_info .title:first-child span { vertical-align:middle; }
 .error_page .error_info .title:first-child span { margin-left:16px; }
 .error_page .error_info .title { margin:0; }
 .error_page .error_info p.title { margin:0 0 16px 0; }
+.error_page .error_info p { font-size:16px; }
 .error_page .error_info #seeDetails { font-weight:bold;color:#a4a4a4;font-size:9px; }
 .error_page .error_info #details { text-align:left;margin:0 auto;width:220px;padding-top:8px;color:#a4a4a4;font-size:9px;line-height:12px; }
 

@@ -13,6 +13,7 @@
 <?php
 echo
 	$html->tag('body',null,'error'),
+		$html->div(null,$html->image('bg_contacto.jpg',array('alt'=>'bg_contacto.jpg')),array('id'=>'bg_showcase')),
 		$html->div('error_page'),
 			$html->tag('h1',$html->link(Configure::read('Site.name'),'/',array('title'=>Configure::read('Site.name'))),array('id'=>'logo')),
 			$content_for_layout,
