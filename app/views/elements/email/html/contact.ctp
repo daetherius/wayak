@@ -3,7 +3,6 @@
 	<p><strong>Nombre: </strong><?=$nombre?></p>
 	<p><strong>Email: </strong><?=$email?></p>
 	<?
-	if(isset($empresa) && $empresa) echo $html->tag('p','<strong>Empresa: </strong>'.$empresa);
 	if(isset($telefono) && $telefono) echo $html->tag('p','<strong>Teléfono: </strong>'.$telefono);
 	if(isset($servicios) && $servicios) echo $html->tag('p','<strong>Interesado en: </strong>'.implode(', ',$servicios));
 	if($mensaje){
