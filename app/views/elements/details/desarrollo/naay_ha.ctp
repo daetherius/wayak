@@ -6,7 +6,7 @@ echo
 			$html->div('separator',''),
 			$html->div('pad'),
 				$html->tag('h2','Villas Naay-Há','title'),
-				$html->para(null,'Diseñada para satisfacer los más exigentes gustos, su diseño arquitectonico fusiona belleza y funcionalidad. Sus terrazas y balcones así como como sus cuatro habitaciones todas con vista al mar, transforma Naay-Há una fantasía hecha realidad.'),
+				$html->para(null,'Diseñada para satisfacer los más exigentes gustos, su diseño arquitectonico fusiona belleza y funcionalidad. Sus terrazas y balcones así como como sus cuatro habitaciones todas con vista al mar, transforman Naay-Há en una fantasía hecha realidad.'),
 
 				$this->element('hidden_gallery',compact('album')),
 				$html->link('Ver Ficha Arquitectónica','/img/fichas/desarrollo/naay_ha.jpg',array('class'=>'pulsembox')),

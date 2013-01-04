@@ -6,7 +6,7 @@ echo
 			$html->div('separator',''),
 			$html->div('pad'),
 				$html->tag('h2','Villas Jaal-Há','title'),
-				$html->para(null,'Místicos amaneceres y majestuosos atardeceres, Las Villas Jaal-Há son para  aquello que quieren vivir el sueño Wayak al máximo. Ideada para los que no quieren escatimar en comodidades. Su exclusivo Penthouse y todo el equipamiento que una residencia de lujo puede aspirar, hacen hacen de la vida a la orilla del mar una experiencia única.'),
+				$html->para(null,'Místicos amaneceres y majestuosos atardeceres, Las Villas Jaal-Há son para aquellos que quieren vivir el sueño Wayak al máximo. Ideada para los que no quieren escatimar en comodidades. Su exclusivo Penthouse y todo el equipamiento que una residencia de lujo puede aspirar, hacen de la vida a la orilla del mar una experiencia única.'),
 				$html->para(null,'Fusión entre belleza y lujo. Cuatro habitaciones y un penthouse, todas con terraza, dos balcones y vista al mar en todas las habitaciones.'),
 
 				$this->element('hidden_gallery',compact('album')),
