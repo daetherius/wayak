@@ -7,6 +7,8 @@ $regex = array(
 	'id'=>'[0-9]+_[a-zA-Z0-9\-]+'
 );
 
+Router::connect('/palm',array('controller'=>'palm','action'=>'pentgarden'));
+
 foreach(Configure::read('Modules') as $controller => $mod){
 	$alias = $mod['route'];
 	Router::connect('/'.$alias,array('controller'=>$controller,'action'=>'index'));
@@ -16,6 +18,7 @@ foreach(Configure::read('Modules') as $controller => $mod){
 	Router::connect('/admin/'.$alias,array('controller'=>$controller,'action'=>'index','admin'=>1));
 	Router::connect('/admin/'.$alias.'/:action/*',array('controller'=>$controller,'action'=>':action','admin'=>1));
 }
+
 
 Router::connect('/',array('controller'=>'inicio','action'=>'index'));
 Router::connect('/registro',array('controller'=>'members','action'=>'registro'));

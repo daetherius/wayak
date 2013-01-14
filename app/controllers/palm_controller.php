@@ -4,6 +4,7 @@ class PalmController extends MyController{
 	var $name = 'Palm';
 	var $uses = array('Album');
 
+	function index(){ $this->redirect(array('action'=>'pentgarden')); }
 	function pentgarden(){ $this->set_albums();$this->render('/palm/index'); }
 	function departamentos(){ $this->set_albums();$this->render('/palm/index'); }
 	function penthouse(){ $this->set_albums();$this->render('/palm/index'); }
