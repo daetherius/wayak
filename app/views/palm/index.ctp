@@ -12,7 +12,8 @@ echo
 		$this->element('details/palm/penthouse',array('album'=>$albums['penthouse'],'visible'=>$visible == 'penthouse')),
 	'</div>';
 
-	$moo->scroll(array('column1','column2','column3','column4','column5','column6'));
+	$moo->scroll(array('column1','column2','column3'));
+	$moo->addEvent('.section_nav > a','click','myScrolls.each(function(el){ el.refresh.delay(100,el); });',array('css'=>1));
 ?>
 </div>
 </div><!-- .content -->

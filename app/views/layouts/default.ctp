@@ -25,7 +25,7 @@
 <meta itemprop="description" content="<?=$og_for_layout['description']?>" />
 <meta itemprop="image" content="<?=$og_for_layout['image']?>" />
 
-<?=$html->css(array('generic','main','pulsembox','mooshowcase'))?> 
+<?=$html->css(array('generic','main','pulsembox','mooshowcase','mooscroll'))?> 
 </head>
 <?php
 echo
@@ -116,7 +116,7 @@ echo
 	');
 	
 	echo
-		$html->script(array('moo13m','utils','pulsembox','mooshowcase','mooscroller')),
+		$html->script(array('moo13m','utils','pulsembox','mooshowcase','iscroll')),
 		$scripts_for_layout,
 		$moo->writeBuffer(array('onDomReady'=>false)),
 		$html->tag('noscript',$html->tag('style','#wrap { visibility:visible } #outside { left:0; }',array('type'=>'text/css'))),

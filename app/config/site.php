@@ -5,7 +5,7 @@ $config['Site'] = array(
 	'email'=>'info@'.$_SERVER['SERVER_NAME'],
 	'slogan'=>'Visions of a Dream',
 	'keywords'=>'',
-	'description'=>'',
+	'description'=>'Disfrute de majestuosas vista al mar desde nuestras lujosas unidades que ofrecen a su familia amplios espacios y una ubicación privilegiada; donde la calidez del entorno, el ambiente familiar y resort nos abrazan armónicamente.',
 	'tw'=>'http://twitter.com/villaswayak',
 	'fb'=>'http://facebook.com/VillasWayak'
 );

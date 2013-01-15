@@ -595,6 +595,7 @@ div.captcha > span { padding-left:12px; }
 	height:478px;
 	color:#002D45;
 	padding:0;
+	overflow:auto;
 }
 .column .separator {
 	position:absolute;

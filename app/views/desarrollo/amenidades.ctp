@@ -2,7 +2,7 @@
 echo
 	$this->element('top',array('wide'=>true)),
 	$html->div('sections clear'),
-		$html->div('column',null,array('id'=>'column1')),
+		$html->div('column'),
 			$html->div('separator',''),
 			$html->div('pad'),
 				$html->tag('h2','Amenidades','title'),
@@ -12,7 +12,7 @@ echo
 				$this->element('hidden_gallery',compact('album')),
 			'</div>',
 		'</div>',
-		$html->div('column',null,array('id'=>'column2')),
+		$html->div('column',null,array('id'=>'column1')),
 			$html->div('pad'),
 				$html->tag('ul'),
 					$html->tag('li','146 mts. de frente de playa'),
@@ -33,7 +33,7 @@ echo
 			'</div>',
 		'</div>',
 	'</div>';
-	$moo->scroll(array('column1','column2'));
+	$moo->scroll(array('column1'));
 ?>
 </div>
 </div><!-- .content -->

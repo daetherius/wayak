@@ -2,7 +2,7 @@
 $visible = !empty($visible);
 echo
 	$html->div($visible ? '':'hide',null,array('id'=>'layer_jaal_ha')),
-		$html->div('column',null,array('id'=>'column1')),
+		$html->div('column'),
 			$html->div('separator',''),
 			$html->div('pad'),
 				$html->tag('h2','Villas Jaal-Há','title'),
@@ -14,7 +14,7 @@ echo
 			'</div>',
 		'</div>',
 		//-----
-		$html->div('column',null,array('id'=>'column2')),
+		$html->div('column',null,array('id'=>'column1')),
 			$html->div('pad'),
 				$html->tag('ul'),
 					$html->tag('li','3 Plantas'),

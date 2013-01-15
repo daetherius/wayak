@@ -9,7 +9,8 @@ echo
 		$this->element('details/desarrollo/jaal_ha',array('album'=>$albums['jaal_ha'],'visible'=>$visible == 'jaal_ha')),
 		$this->element('details/desarrollo/naay_ha',array('album'=>$albums['naay_ha'],'visible'=>$visible == 'naay_ha')),
 	'</div>';
-	$moo->scroll(array('column1','column2','column3','column4'));
+	$moo->scroll(array('column1','column2'));
+	$moo->addEvent('.section_nav > a','click','myScrolls.each(function(el){ el.refresh.delay(100,el); });',array('css'=>1));
 ?>
 </div>
 </div><!-- .content -->

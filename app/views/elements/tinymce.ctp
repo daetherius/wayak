@@ -21,8 +21,8 @@
 	    theme_advanced_buttons2 : "bold,italic,underline,forecolor,|,formatselect,fontselect,fontsizeselect,|,justifyleft,justifycenter,justifyright,justifyfull,|,bullist,numlist,|,sub,sup,cite,|,code'.$lipsum.'",
 	    theme_advanced_buttons3 : "tablecontrols",';
 	} else {
-	    $options = 'plugins: "'.$lipsum.'",
-	    theme_advanced_buttons1 : "bold,italic,underline,link'.$lipsum.'",
+	    $options = 'plugins: "safari,paste'.$lipsum.'",
+	    theme_advanced_buttons1 : "bold,italic,underline,link'.$lipsum.',|,pastetext,pasteword",
 	    theme_advanced_buttons2 : "",
 	    theme_advanced_buttons3 : "",';
 	}

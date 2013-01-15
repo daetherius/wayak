@@ -1,4 +1,6 @@
 <?php
+$desc = _dec($item['Eventportada']['descripcion']);
+
 echo
 	$this->element('top',array('wide'=>false)),
 	$html->div('detail'),
@@ -10,13 +12,16 @@ echo
 				'w'=>360,
 				'class'=>'portada Centro pulsembox',
 				'url'=>true,
-				'atts'=>array('rel'=>'roller')
+				'atts'=>array('rel'=>'roller','title'=>strip_tags($desc),'name'=>$desc)
 			)),
 			$html->div('desc tmce',$item[$_m[0]]['descripcion'].''),
 		'</div>',
 		$html->div('hide');
 
-		foreach($item[$_m[0].'img'] as $img) echo $html->link('','/'.$img['src'],array('class'=>'pulsembox','rel'=>'roller'));
+		foreach($item[$_m[0].'img'] as $img){
+			$desc = _dec($img['descripcion']);
+			echo $html->link('','/'.$img['src'],array('class'=>'pulsembox','rel'=>'roller','title'=>strip_tags($desc),'name'=>$desc));
+		}
 
 		echo '</div>',
 	

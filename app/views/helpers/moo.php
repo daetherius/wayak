@@ -167,15 +167,17 @@ class MooHelper extends JsHelper {
 			$this->buffer('new mooScroller("'.$el.'"'.$options.');');
 	}
 
-	function scroll($els=array(),$options = array()){
+	function scroll($els=  array(),$options = array()){ /*return; /* DISABLE */
 		$els = (array)$els;
-		$options = $this->Util->json(array_merge($options,array('stealth'=>false)));
-		$this->Html->script('mooscroll',false);
-		$this->Html->css('mooscroll','stylesheet',array('inline'=>false));
+		$options = $this->Util->json(array_merge($options,array('scrollbarClass'=>'myScrollbar')));
+		//$this->Html->script('iscroll',false);
+		//$this->Html->css('mooscroll','stylesheet',array('inline'=>false));
+		
+		$this->buffer('var myScrolls = [];');
 		
 		if(!empty($els)){
 			foreach($els as $el)
-				$this->buffer('var moo_scroll = new mooScroll("'.$el.'"'.$options.');');
+				$this->buffer('myScrolls.push(new iScroll("'.$el.'"'.$options.'));');
 		}
 	}
 
