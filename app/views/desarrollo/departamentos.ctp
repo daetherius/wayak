@@ -10,7 +10,8 @@ echo
 		$this->element('details/desarrollo/penthouse',array('album'=>$albums['penthouse'],'visible'=>$visible == 'penthouse')),
 	'</div>';
 	$moo->scroll(array('column1','column2'));
-	$moo->addEvent('.section_nav > a','click','myScrolls.each(function(el){ el.refresh.delay(100,el); });',array('css'=>1));
+	$script = 'myScrolls.each(function(el){ el.refresh.delay(100,el); });';
+	$moo->addEvent('.section_nav > a','click',$script,array('css'=>1));
 ?>
 </div>
 </div><!-- .content -->

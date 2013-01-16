@@ -169,7 +169,7 @@ class MooHelper extends JsHelper {
 
 	function scroll($els=  array(),$options = array()){ /*return; /* DISABLE */
 		$els = (array)$els;
-		$options = $this->Util->json(array_merge($options,array('scrollbarClass'=>'myScrollbar')));
+		$options = $this->Util->json(array_merge($options,array('scrollbarClass'=>'myScrollbar','hideScrollbar'=>false,'fadeScrollbar'=>false)));
 		//$this->Html->script('iscroll',false);
 		//$this->Html->css('mooscroll','stylesheet',array('inline'=>false));
 		

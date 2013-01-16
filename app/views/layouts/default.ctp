@@ -116,7 +116,7 @@ echo
 	');
 	
 	echo
-		$html->script(array('moo13m','utils','pulsembox','mooshowcase','iscroll')),
+		$html->script(array('moo13m','utils','pulsembox','mooshowcase','iscroll','mooscroller')),
 		$scripts_for_layout,
 		$moo->writeBuffer(array('onDomReady'=>false)),
 		$html->tag('noscript',$html->tag('style','#wrap { visibility:visible } #outside { left:0; }',array('type'=>'text/css'))),
