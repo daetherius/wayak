@@ -10,7 +10,9 @@ echo
 				$html->para(null,'Fusión entre belleza y lujo. Cuatro habitaciones y un penthouse, todas con terraza, dos balcones y vista al mar en todas las habitaciones.'),
 
 				$this->element('hidden_gallery',compact('album')),
-				$html->link('Ver Ficha Arquitectónica','/img/fichas/desarrollo/jaal_ha.jpg',array('class'=>'pulsembox')),
+				$html->link('Ver Planta Arquitectónica','/img/plantas/desarrollos/villas1.png',array('class'=>'pulsembox','rel'=>'jaal_ha','name'=>'Planta Baja')),
+				$html->div('hide',$html->link('','/img/plantas/desarrollos/villas2.png',array('class'=>'pulsembox','rel'=>'jaal_ha','name'=>'Segunda Planta'))),
+
 			'</div>',
 		'</div>',
 		//-----

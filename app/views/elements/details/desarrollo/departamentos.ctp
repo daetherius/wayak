@@ -19,7 +19,9 @@ echo
 				'</ul>',
 
 				$this->element('hidden_gallery',compact('album')),
-				$html->link('Ver Ficha Arquitectónica','/img/fichas/desarrollo/departamentos.jpg',array('class'=>'pulsembox')),
+				$html->link('Ver Planta Arquitectónica','/img/plantas/desarrollos/departamento1.png',array('class'=>'pulsembox','rel'=>'deptos','name'=>'Departamento estilo Studio')),
+				$html->div('hide',$html->link('','/img/plantas/desarrollos/departamento2.png',array('class'=>'pulsembox','rel'=>'deptos','name'=>'Departamento estilo Suite'))),
+
 			'</div>',
 		'</div>',
 		//-----

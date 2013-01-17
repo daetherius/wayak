@@ -9,7 +9,8 @@ echo
 				$html->para(null,'Diseñada para satisfacer los más exigentes gustos, su diseño arquitectonico fusiona belleza y funcionalidad. Sus terrazas y balcones así como como sus cuatro habitaciones todas con vista al mar, transforman Naay-Há en una fantasía hecha realidad.'),
 
 				$this->element('hidden_gallery',compact('album')),
-				$html->link('Ver Ficha Arquitectónica','/img/fichas/desarrollo/naay_ha.jpg',array('class'=>'pulsembox')),
+				$html->link('Ver Planta Arquitectónica','/img/plantas/desarrollos/villas1.png',array('class'=>'pulsembox','rel'=>'naay_ha','name'=>'Planta Baja')),
+				$html->div('hide',$html->link('','/img/plantas/desarrollos/villas2.png',array('class'=>'pulsembox','rel'=>'naay_ha','name'=>'Planta Alta'))),
 			'</div>',
 		'</div>',
 		//-----

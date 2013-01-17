@@ -19,7 +19,7 @@ echo
 				'</ul>',
 
 				$this->element('hidden_gallery',compact('album')),
-				$html->link('Ver Ficha Arquitectónica','/img/fichas/desarrollo/departamentos.jpg',array('class'=>'pulsembox')),
+				$html->link('Ver Planta Arquitectónica','/img/plantas/desarrollos/penthouse.png',array('class'=>'pulsembox','rel'=>'penthouse','name'=>'Penthouse')),
 			'</div>',
 		'</div>',
 		//-----
